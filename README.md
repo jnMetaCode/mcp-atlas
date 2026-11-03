@@ -2,6 +2,16 @@
 
 跨公司、跨开发者的中文 MCP 导航。当前功能预览包含 32 个真实项目、8 个场景分类、32 篇文档核对配置指南。
 
+**[在线体验 Beta](https://mcp-atlas-yx.vasthen67.chatgpt.site) · [Skills 技能目录](https://mcp-atlas-yx.vasthen67.chatgpt.site/skills/) · [反馈问题](https://github.com/jnMetaCode/mcp-atlas/issues/new/choose)**
+
+另有 26 项 Agent Skills，按任务与维护者检索，提供来源及中文安装说明。MCP 与 Skills 分开收录，便于判断连接条件与使用方法。
+
+## 邀请你试用
+
+可以从以下任务开始：搜索一个项目、比较两种实现、阅读并复制适用客户端的配置，或查找一个 Skills。欢迎反馈搜索不到的内容、步骤不清楚之处和手机操作问题；描述页面地址、客户端版本、预期与实际结果即可。不要提交 Token、私人数据或完整敏感日志。
+
+当前为精选测试版，不承诺全网覆盖。指南经过文档核对，MCP 连接和 Skills 安装尚未实测；未确认的费用明确保留未知。
+
 ## 开发
 
 需要 Node.js 22 或以上。
