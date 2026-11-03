@@ -1,5 +1,6 @@
 import { PageIntro, SourceLink } from "../../components/ui";
 import catalog from "../../lib/data";
+import site from "../../../data/site.json";
 export const metadata = { title: "关于项目" };
 export default function Page() {
   return (
@@ -30,8 +31,9 @@ export default function Page() {
         <h2>开放协作</h2>
         <p>
           代码采用 MIT，原创指南采用 CC BY 4.0，整理的事实数据采用
-          CC0。公开贡献仓库尚未配置；收录保留上游来源与第三方权利。
+          CC0。收录保留上游来源与第三方权利，欢迎通过公开仓库推荐项目或修正信息。
         </p>
+        <SourceLink href={site.repository}>查看源码与参与贡献</SourceLink>
         <SourceLink href="https://registry.modelcontextprotocol.io/">
           了解公共 MCP Registry
         </SourceLink>
