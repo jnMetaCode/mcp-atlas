@@ -1,0 +1,53 @@
+name: 网站或指南使用问题
+description: 报告访问、布局、搜索、复制或指南步骤问题
+title: "[使用反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢试用。请勿提交 Token、密码、私人文件或未脱敏的日志。截图是可选的。
+        提交 Issue 不代表网站已实测第三方 MCP，也不意味着维护者已经确认问题。
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题发生在哪里？
+      options:
+        - 网站访问或登录
+        - 页面布局或手机操作
+        - 搜索、筛选或对比
+        - MCP 配置指南
+        - Skills 安装说明
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: 页面地址
+      placeholder: https://mcp-atlas-yx.vasthen67.chatgpt.site/…
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 操作步骤与实际结果
+      description: 写清从哪里进入、点击或输入了什么，以及发生了什么。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望的结果
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 设备和软件环境
+      description: 浏览器、操作系统；指南问题还请提供 MCP 客户端及版本。
+      placeholder: 例如 macOS / Chrome / VS Code 版本
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 补充信息或截图（可选）
+      description: 请先遮盖账号、私有网址、密钥及个人数据。
