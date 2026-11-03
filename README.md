@@ -34,7 +34,7 @@ Figma、Slack、Atlassian 均已关联官方和社区实现，可从服务索引
 - 公开仓库为 https://github.com/jnMetaCode/mcp-atlas；申请可在 GitHub 确认提交，网站不自动发送。
 - Registry 候选导入、差异报告、来源链接检查及可选草稿 PR 流程已提供，尚未完成真实外网与远程工作流验证。
 - 浏览器测试需有运行浏览器及绑定本地端口的权限；受限环境可能无法启动。提供测试不代表已执行通过。
-- 测试版已部署至 https://mcp-atlas-yx.vasthen67.chatgpt.site ，当前保留私有访问权限，尚未公开推广。
+- 测试版已部署至 https://mcp-atlas-yx.vasthen67.chatgpt.site ，现已公开开放 Beta 测试，无需本机启动。
 
 ## 内容维护
 
