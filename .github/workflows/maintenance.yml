@@ -1,0 +1,91 @@
+name: Directory maintenance reports
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 3 * * 1"
+permissions:
+  contents: read
+concurrency:
+  group: directory-maintenance
+  cancel-in-progress: false
+jobs:
+  reports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - name: Import official Registry into review materials
+        id: registry
+        continue-on-error: true
+        run: npm run registry:sync -- --baseline maintenance/registry-state.json --export-review
+      - name: Check published source links
+        id: links
+        continue-on-error: true
+        run: npm run check:links
+      - name: Upload review materials
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maintenance-review
+          path: |
+            .maintenance/registry/runs/
+            .maintenance/links/runs/
+            maintenance/proposals/
+            maintenance/registry-state.json
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Mark incomplete collection as failed
+        if: always() && (steps.registry.outcome == 'failure' || steps.links.outcome == 'failure')
+        run: exit 1
+      - name: Preserve Registry proposals for optional PR job
+        if: steps.registry.outcome == 'success' && steps.registry.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-proposal
+          path: |
+            maintenance/proposals/
+            maintenance/registry-state.json
+          retention-days: 14
+  draft-review:
+    if: vars.MCP_ENABLE_MAINTENANCE_PR == 'true'
+    needs: reports
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        id: proposal
+        with:
+          name: registry-proposal
+          path: maintenance
+      - name: Open or update a draft review PR
+        if: steps.proposal.outcome == 'success'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: maintenance/registry-review
+          title: "chore: review MCP Registry metadata changes"
+          body: |
+            Official Registry observations are staged for manual review.
+
+            This proposal changes maintenance snapshots and review materials only. It does not publish candidates, change official identity, update pricing, or overwrite Chinese descriptions and configuration guides.
+
+            Review maintenance/proposals/registry.md and the normalized JSON before applying any change to data/catalog.json.
+          draft: always-true
+          add-paths: |
+            maintenance/registry-state.json
+            maintenance/proposals/registry.json
+            maintenance/proposals/registry.md

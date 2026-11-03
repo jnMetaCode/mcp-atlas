@@ -1,0 +1,14 @@
+{
+  "servers": [
+    {
+      "id": "fixture-source",
+      "status": "published",
+      "source": "https://fixture.example/ok",
+      "identityEvidence": "https://fixture.example/missing",
+      "sourceRefs": [
+        { "url": "https://fixture.example/limited" },
+        { "url": "https://fixture.example/head-disabled" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "notice": "Synthetic offline fixture only. These entries are not real catalog projects.",
+  "pages": [
+    {
+      "servers": [
+        {
+          "server": {
+            "name": "io.github.fixture/document-tools",
+            "version": "1.0.0",
+            "description": "Synthetic documentation fixture",
+            "repository": {
+              "url": "https://github.com/fixture/document-tools"
+            },
+            "packages": [
+              {
+                "registryType": "npm",
+                "identifier": "@fixture/document-tools",
+                "version": "1.0.0",
+                "transport": { "type": "stdio" }
+              }
+            ]
+          },
+          "_meta": {
+            "io.modelcontextprotocol.registry/official": {
+              "status": "active",
+              "isLatest": true
+            }
+          }
+        }
+      ],
+      "metadata": { "count": 1, "nextCursor": "opaque cursor / page+2" }
+    },
+    {
+      "servers": [
+        {
+          "server": {
+            "name": "io.github.fixture/remote-tools",
+            "version": "2.0.0",
+            "description": "Synthetic remote fixture",
+            "remotes": [
+              {
+                "type": "streamable-http",
+                "url": "https://fixture.example/mcp"
+              }
+            ]
+          },
+          "_meta": {
+            "io.modelcontextprotocol.registry/official": {
+              "status": "active",
+              "isLatest": true
+            }
+          }
+        }
+      ],
+      "metadata": { "count": 1 }
+    }
+  ]
+}

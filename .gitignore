@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+.DS_Store
+*.tar.gz
+test-results/
+playwright-report/
+.maintenance/
+release/

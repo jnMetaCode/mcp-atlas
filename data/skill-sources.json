@@ -1,0 +1,5 @@
+[
+  { "repository": "anthropics/skills", "ref": "main" },
+  { "repository": "vercel-labs/agent-skills", "ref": "main" },
+  { "repository": "getsentry/skills", "ref": "main" }
+]

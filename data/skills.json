@@ -1,0 +1,782 @@
+[
+  {
+    "id": "frontend-design",
+    "name": "Frontend Design",
+    "category": "设计与开发",
+    "summary": "帮助制定网页视觉方向、排版和界面布局。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/frontend-design",
+    "sourceHash": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "已安装并登录 Claude Code，允许使用插件。",
+      "准备明确的页面用途、受众及需要修改的项目。"
+    ],
+    "example": "使用 frontend-design，为我的 MCP 导航页设计清晰的筛选与结果布局，先说明设计方案再修改文件。",
+    "permissions": [
+      "使用时可能读取和修改当前项目的界面文件，范围由实际客户端授权决定。",
+      "它不是 MCP 服务，不提供独立服务端点，也不要求安装某个 MCP 才能收录。"
+    ],
+    "relatedServers": ["figma", "playwright"],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "a5333457c414d20d625f307df945842c0952ecc3"
+  },
+  {
+    "id": "webapp-testing",
+    "name": "Webapp Testing",
+    "category": "开发与测试",
+    "summary": "使用 Playwright 检查本地网页交互、截图和日志。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/webapp-testing",
+    "sourceHash": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "已安装并登录 Claude Code，允许使用插件。",
+      "准备可运行的本地网站；按上游脚本要求准备 Python、Playwright 与浏览器环境。"
+    ],
+    "example": "使用 webapp-testing，检查本地网站的搜索和手机布局，输出失败步骤和截图，不修改业务数据。",
+    "permissions": [
+      "可能运行本地测试脚本、启动服务、操作浏览器并写入截图和报告。",
+      "测试环境需要单独授权；安装本 Skill 不等于安装了 Playwright MCP。"
+    ],
+    "relatedServers": ["playwright", "chrome-devtools"],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "4726215301db64a0cc4d41fc3219c61f37a30f4a"
+  },
+  {
+    "id": "algorithmic-art",
+    "name": "Algorithmic Art",
+    "category": "设计与开发",
+    "summary": "通过程序和可调参数探索生成式视觉作品。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/algorithmic-art",
+    "sourceHash": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Algorithmic Art 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "634f6fa42e4e697fa6afd293acd7fb8246574876"
+  },
+  {
+    "id": "canvas-design",
+    "name": "Canvas Design",
+    "category": "设计与开发",
+    "summary": "为海报等静态视觉作品组织构图和输出。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/canvas-design",
+    "sourceHash": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Canvas Design 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "9f63fee82de84cd4230e1d0e322247b61eb4c94c"
+  },
+  {
+    "id": "brand-guidelines",
+    "name": "Brand Guidelines",
+    "category": "写作与协作",
+    "summary": "在内容和视觉中应用 Anthropic 品牌规范，并非任意公司的通用品牌。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/brand-guidelines",
+    "sourceHash": "1120b3769e2985cefb3d25be981b1f914abeba57ae079b83c20c666c164fa9fe",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Brand Guidelines 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "47c72c607bdb5dd81bdea5de2b5e4f3992a5fd59"
+  },
+  {
+    "id": "doc-coauthoring",
+    "name": "Doc Coauthoring",
+    "category": "写作与协作",
+    "summary": "通过讨论、结构整理和逐轮修改共同完成文档。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/doc-coauthoring",
+    "sourceHash": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Doc Coauthoring 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "a5a69839ef4a161131d80b6daef10037a9686f4a"
+  },
+  {
+    "id": "internal-comms",
+    "name": "Internal Communications",
+    "category": "写作与协作",
+    "summary": "辅助组织内部沟通稿、进度说明和更新内容。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/internal-comms",
+    "sourceHash": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Internal Communications 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "56ea935b74f371bfeb4c7d3c19d5139df866e73b"
+  },
+  {
+    "id": "mcp-builder",
+    "name": "MCP Builder",
+    "category": "开发与测试",
+    "summary": "指导设计和实现让模型调用外部能力的 MCP 服务。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/mcp-builder",
+    "sourceHash": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 MCP Builder 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "d61a9056202a0f8b2d064c896e62f415c45b1bf1"
+  },
+  {
+    "id": "skill-creator",
+    "name": "Skill Creator",
+    "category": "开发与测试",
+    "summary": "创建和改进技能说明，并评估任务触发与执行效果。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/skill-creator",
+    "sourceHash": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Skill Creator 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "65b3a402dbd09b8e83f9d637c6b553875189085c"
+  },
+  {
+    "id": "theme-factory",
+    "name": "Theme Factory",
+    "category": "设计与开发",
+    "summary": "为文档或展示内容应用一致的视觉主题。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/theme-factory",
+    "sourceHash": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Theme Factory 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "90dfceaf2ecdc191a4dcfb0069768a9560638998"
+  },
+  {
+    "id": "web-artifacts-builder",
+    "name": "Web Artifacts Builder",
+    "category": "设计与开发",
+    "summary": "组织交互式网页展示及相关前端资源。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/web-artifacts-builder",
+    "sourceHash": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Web Artifacts Builder 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "8b39b19f259b4216ecb07574741dd8eaa9863a07"
+  },
+  {
+    "id": "slack-gif-creator",
+    "name": "Slack GIF Creator",
+    "category": "设计与开发",
+    "summary": "制作适合 Slack 展示的动画 GIF，并检查输出约束。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/slack-gif-creator",
+    "sourceHash": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Slack GIF Creator 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install example-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "16660d8ceb77af47986bba1c9176c2ff3f287a91"
+  },
+  {
+    "id": "pdf",
+    "name": "PDF",
+    "category": "文档与表格",
+    "summary": "围绕 PDF 提取、生成及整理文档内容。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/pdf",
+    "sourceHash": "9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c",
+    "license": "源码可见，参见单独许可；不标为开源",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 PDF 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "d3e046a5ae107a6cb23cfb16c219837094ab35d3"
+  },
+  {
+    "id": "docx",
+    "name": "DOCX",
+    "category": "文档与表格",
+    "summary": "创建、阅读和编辑 Word 文档。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/docx",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/docx",
+    "sourceHash": "8017469ea95fb7d28225c62daf8e2f3492a7b516fc64c18c28977cbf8980b7fe",
+    "license": "源码可见，参见单独许可；不标为开源",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 DOCX 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "fb954a460a1ea2294e9595e87fecce8df043eeba"
+  },
+  {
+    "id": "pptx",
+    "name": "PPTX",
+    "category": "文档与表格",
+    "summary": "创建、编辑和检查演示文稿。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/pptx",
+    "sourceHash": "a7ff03e2c85b636f55232a6b1555f5dd90216b7a1a359ab289d8364e6acbc6a0",
+    "license": "源码可见，参见单独许可；不标为开源",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 PPTX 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "41cd2306977f269bb1d8169a9643b35053aa66bd"
+  },
+  {
+    "id": "xlsx",
+    "name": "XLSX",
+    "category": "文档与表格",
+    "summary": "处理电子表格、公式和数据呈现。",
+    "publisher": "Anthropic",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+    "repository": "anthropics/skills",
+    "sourcePath": "skills/xlsx",
+    "sourceHash": "6712b39718fe815054abca9c3ee72f989613e6f771c8a5c58f30a65a6c905622",
+    "license": "源码可见，参见单独许可；不标为开源",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 XLSX 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/anthropics/skills#try-in-claude-code-claudeai-and-the-api",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "9da54804cc8c938586f89363c8da3b3a6e2a563d"
+  },
+  {
+    "id": "vercel-labs-react-best-practices",
+    "name": "React Best Practices",
+    "category": "开发与测试",
+    "summary": "从数据加载、渲染和包体积等方面检查 React/Next.js 性能。",
+    "publisher": "Vercel",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+    "repository": "vercel-labs/agent-skills",
+    "sourcePath": "skills/react-best-practices",
+    "sourceHash": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+    "license": "MIT（上游仓库声明）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 React Best Practices 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "npx skills add vercel-labs/agent-skills",
+    "installContext": "终端 Shell 命令；安装时选择需要的技能与目标客户端",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/vercel-labs/agent-skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "237988de4a66dd8a71d30a2c24ebe1a86b58d04e"
+  },
+  {
+    "id": "vercel-labs-web-design-guidelines",
+    "name": "Web Design Guidelines",
+    "category": "设计与开发",
+    "summary": "检查界面代码的可访问性、表单、交互和性能细节。",
+    "publisher": "Vercel",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+    "repository": "vercel-labs/agent-skills",
+    "sourcePath": "skills/web-design-guidelines",
+    "sourceHash": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+    "license": "MIT（上游仓库声明）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Web Design Guidelines 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "npx skills add vercel-labs/agent-skills",
+    "installContext": "终端 Shell 命令；安装时选择需要的技能与目标客户端",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/vercel-labs/agent-skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "ceae92ab319216a68274168fba9b63b998b65997"
+  },
+  {
+    "id": "vercel-labs-composition-patterns",
+    "name": "Composition Patterns",
+    "category": "开发与测试",
+    "summary": "改进 React 组件组合与可复用 API 设计。",
+    "publisher": "Vercel",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/main/skills/composition-patterns",
+    "repository": "vercel-labs/agent-skills",
+    "sourcePath": "skills/composition-patterns",
+    "sourceHash": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
+    "license": "MIT（上游仓库声明）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Composition Patterns 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "npx skills add vercel-labs/agent-skills",
+    "installContext": "终端 Shell 命令；安装时选择需要的技能与目标客户端",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/vercel-labs/agent-skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "d07025bf943345bc1cf15eb923594f889ff881f0"
+  },
+  {
+    "id": "vercel-labs-react-native-skills",
+    "name": "React Native Skills",
+    "category": "开发与测试",
+    "summary": "为 React Native 移动应用提供实现与性能方面的实践。",
+    "publisher": "Vercel",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-native-skills",
+    "repository": "vercel-labs/agent-skills",
+    "sourcePath": "skills/react-native-skills",
+    "sourceHash": "4012750a5ccbe064ca04af3835d5d1b011979d2d09d9b6df1c8128fac58e0a66",
+    "license": "MIT（上游仓库声明）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 React Native Skills 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "npx skills add vercel-labs/agent-skills",
+    "installContext": "终端 Shell 命令；安装时选择需要的技能与目标客户端",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/vercel-labs/agent-skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "73401865dd7440a43c5243b107a3763e0d2f4aae"
+  },
+  {
+    "id": "vercel-labs-writing-guidelines",
+    "name": "Writing Guidelines",
+    "category": "写作与协作",
+    "summary": "按 Vercel 写作规范检查文档结构、表达和代码示例。",
+    "publisher": "Vercel",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/main/skills/writing-guidelines",
+    "repository": "vercel-labs/agent-skills",
+    "sourcePath": "skills/writing-guidelines",
+    "sourceHash": "89a5f581193289b80af58b980090aeed535047c8df2b55ccbaae0de40283a99d",
+    "license": "MIT（上游仓库声明）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Writing Guidelines 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "npx skills add vercel-labs/agent-skills",
+    "installContext": "终端 Shell 命令；安装时选择需要的技能与目标客户端",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/vercel-labs/agent-skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "63facf310252a990d154bed12b3dcdd295ba771a"
+  },
+  {
+    "id": "getsentry-code-review",
+    "name": "Code Review",
+    "category": "开发与测试",
+    "summary": "按 Sentry 工程实践检查代码变化及潜在问题。",
+    "publisher": "Sentry",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/getsentry/skills/tree/main/skills/code-review",
+    "repository": "getsentry/skills",
+    "sourcePath": "skills/code-review",
+    "sourceHash": "ec5fc8855cb4648b4f2c79b608f8c8824a2da6a683330524c4d6283e4a3954c4",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Code Review 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin marketplace add getsentry/skills\nclaude plugin install sentry-skills@sentry-skills",
+    "installContext": "终端 Shell 命令；安装的是 Sentry 技能集合",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/getsentry/skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "621007b4da6639b9574e3e0a18054df73a5de807"
+  },
+  {
+    "id": "getsentry-find-bugs",
+    "name": "Find Bugs",
+    "category": "开发与测试",
+    "summary": "分析当前分支变化中的缺陷和风险。",
+    "publisher": "Sentry",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/getsentry/skills/tree/main/skills/find-bugs",
+    "repository": "getsentry/skills",
+    "sourcePath": "skills/find-bugs",
+    "sourceHash": "08664c3698f89116a4b04d12f699f95cff1aadb725da353b7f24f8ad73b02003",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Find Bugs 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin marketplace add getsentry/skills\nclaude plugin install sentry-skills@sentry-skills",
+    "installContext": "终端 Shell 命令；安装的是 Sentry 技能集合",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/getsentry/skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "490a181b1a47537cd19eacbdd8f2c46740a268db"
+  },
+  {
+    "id": "getsentry-code-simplifier",
+    "name": "Code Simplifier",
+    "category": "开发与测试",
+    "summary": "在保留行为的前提下简化代码和提高可读性。",
+    "publisher": "Sentry",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/getsentry/skills/tree/main/skills/code-simplifier",
+    "repository": "getsentry/skills",
+    "sourcePath": "skills/code-simplifier",
+    "sourceHash": "ad4ce00d2759e0773bee88f267f4ae0f52684979d7fbceb14dffd5efefbce141",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 Code Simplifier 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin marketplace add getsentry/skills\nclaude plugin install sentry-skills@sentry-skills",
+    "installContext": "终端 Shell 命令；安装的是 Sentry 技能集合",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/getsentry/skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "a8c66eb86aa4902814a28192055acef2322257f9"
+  },
+  {
+    "id": "getsentry-gha-security-review",
+    "name": "GitHub Actions Security Review",
+    "category": "开发与测试",
+    "summary": "检查 GitHub Actions 工作流的权限和可利用配置。",
+    "publisher": "Sentry",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/getsentry/skills/tree/main/skills/gha-security-review",
+    "repository": "getsentry/skills",
+    "sourcePath": "skills/gha-security-review",
+    "sourceHash": "b75c6c43ff99c82b3cf44519bd30723917de97064f225e392ecfd6fdcd7455bd",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 GitHub Actions Security Review 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin marketplace add getsentry/skills\nclaude plugin install sentry-skills@sentry-skills",
+    "installContext": "终端 Shell 命令；安装的是 Sentry 技能集合",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/getsentry/skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "7ef6c6ed67a57539e62e6465acf5a8a45fab12d0"
+  },
+  {
+    "id": "getsentry-agents-md",
+    "name": "AGENTS.md",
+    "category": "写作与协作",
+    "summary": "整理有来源、简洁且适用于仓库的代理工作说明。",
+    "publisher": "Sentry",
+    "client": "Claude Code",
+    "reviewedAt": "2026-10-31",
+    "source": "https://github.com/getsentry/skills/tree/main/skills/agents-md",
+    "repository": "getsentry/skills",
+    "sourcePath": "skills/agents-md",
+    "sourceHash": "8a91ada35068f43ef7ee03e38937863bac4f407878b06f0a4f1ddb4af24bec7e",
+    "license": "以该目录或仓库许可为准，未单独核对",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许安装外部技能。",
+      "阅读该目录 SKILL.md 及附带脚本，按实际任务补充所需运行环境。"
+    ],
+    "example": "使用 AGENTS.md 处理测试项目中的对应任务，先给出计划和操作范围，再由我检查结果。",
+    "permissions": [
+      "技能可能读取项目、修改文件或调用脚本；实际操作受客户端授权约束。",
+      "收录不代表本站执行过代码、安全认证或保证与所有客户端兼容。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin marketplace add getsentry/skills\nclaude plugin install sentry-skills@sentry-skills",
+    "installContext": "终端 Shell 命令；安装的是 Sentry 技能集合",
+    "installScope": "集合安装；先查看集合包含的技能，再确认所需范围。",
+    "installSource": "https://github.com/getsentry/skills#installation",
+    "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
+    "sourceBlob": "bd92e4a9df47f63bd943bc3d5011da0b3d6e04ff"
+  }
+]

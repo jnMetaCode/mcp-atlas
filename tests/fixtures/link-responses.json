@@ -1,0 +1,32 @@
+{
+  "notice": "Synthetic offline HTTP responses. No live network requests.",
+  "responses": [
+    {
+      "url": "https://fixture.example/ok",
+      "method": "HEAD",
+      "status": 200,
+      "headers": { "etag": "fixture-v1" }
+    },
+    {
+      "url": "https://fixture.example/missing",
+      "method": "HEAD",
+      "status": 404
+    },
+    {
+      "url": "https://fixture.example/limited",
+      "method": "HEAD",
+      "status": 429,
+      "headers": { "retry-after": "0" }
+    },
+    {
+      "url": "https://fixture.example/head-disabled",
+      "method": "HEAD",
+      "status": 405
+    },
+    {
+      "url": "https://fixture.example/head-disabled",
+      "method": "GET",
+      "status": 200
+    }
+  ]
+}

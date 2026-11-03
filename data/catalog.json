@@ -1,0 +1,2037 @@
+{
+  "schemaVersion": 2,
+  "snapshot": "2026-10-22-preview-2",
+  "categories": [
+    {
+      "id": "development",
+      "name": "开发与代码",
+      "icon": "Code2",
+      "description": "让开发工具成为 AI 的工作伙伴"
+    },
+    {
+      "id": "search-research",
+      "name": "搜索与研究",
+      "icon": "Search",
+      "description": "从网页到资料，获取有用的信息"
+    },
+    {
+      "id": "knowledge",
+      "name": "文档与知识",
+      "icon": "BookOpen",
+      "description": "连接文档、笔记与长期记忆"
+    },
+    {
+      "id": "office",
+      "name": "办公与协作",
+      "icon": "PanelsTopLeft",
+      "description": "连接团队每天使用的协作工具"
+    },
+    {
+      "id": "data",
+      "name": "数据与数据库",
+      "icon": "Database",
+      "description": "查询、理解并使用你的数据"
+    },
+    {
+      "id": "browser",
+      "name": "浏览器与自动化",
+      "icon": "Globe",
+      "description": "浏览网页、调试与自动化操作"
+    },
+    {
+      "id": "media",
+      "name": "设计与多媒体",
+      "icon": "Palette",
+      "description": "将创意工具接入你的工作流"
+    },
+    {
+      "id": "infrastructure",
+      "name": "云与运维",
+      "icon": "Cloud",
+      "description": "管理基础设施与开发环境"
+    }
+  ],
+  "servers": [
+    {
+      "id": "github",
+      "slug": "github",
+      "name": "GitHub MCP Server",
+      "aliases": ["代码仓库", "github"],
+      "summaryZh": "在 AI 工作流中检索仓库、处理议题与协作开发。",
+      "publisher": "GitHub",
+      "serviceIds": ["github"],
+      "category": "development",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/github/github-mcp-server",
+      "deployment": "both",
+      "transport": ["stdio", "streamable_http"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/github/github-mcp-server",
+      "color": "#24292f",
+      "mark": "GH",
+      "tags": ["代码仓库", "协作开发"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": true,
+      "reason": "由 GitHub 维护，适合连接仓库与开发协作。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["github-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/github/github-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/github/github-mcp-server",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地服务",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key", "oauth"],
+          "endpoint": "",
+          "package": "ghcr.io/github/github-mcp-server",
+          "sourceIds": ["upstream"]
+        },
+        {
+          "id": "remote",
+          "label": "GitHub 托管服务",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["api_key", "oauth"],
+          "endpoint": "https://api.githubcopilot.com/mcp/",
+          "package": "",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "playwright",
+      "slug": "playwright",
+      "name": "Playwright MCP",
+      "aliases": ["微软", "浏览器自动化", "playwright"],
+      "summaryZh": "通过浏览器页面结构，让 AI 完成网页交互与自动化任务。",
+      "publisher": "Microsoft",
+      "serviceIds": ["browser"],
+      "category": "browser",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/microsoft/playwright-mcp",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "Apache-2.0",
+      "source": "https://github.com/microsoft/playwright-mcp",
+      "color": "#247b4c",
+      "mark": "PW",
+      "tags": ["浏览器", "自动化"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": true,
+      "reason": "围绕页面结构进行交互，适合浏览器自动化场景。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["playwright-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/microsoft/playwright-mcp",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/microsoft/playwright-mcp",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "@playwright/mcp",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "chrome-devtools",
+      "slug": "chrome-devtools",
+      "name": "Chrome DevTools MCP",
+      "aliases": ["谷歌", "chrome", "网页调试"],
+      "summaryZh": "将 Chrome 开发者工具接入 AI，辅助页面检查与调试。",
+      "publisher": "ChromeDevTools",
+      "serviceIds": ["browser"],
+      "category": "browser",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "Apache-2.0",
+      "source": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "color": "#366cce",
+      "mark": "CD",
+      "tags": ["浏览器", "调试"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "适合需要检查网页和浏览器行为的开发者。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["chrome-devtools-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "context7",
+      "slug": "context7",
+      "name": "Context7",
+      "aliases": ["文档", "context7", "库文档"],
+      "summaryZh": "为 AI 提供软件库文档与代码示例，减少过时资料带来的偏差。",
+      "publisher": "Upstash",
+      "serviceIds": ["context7"],
+      "category": "knowledge",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/upstash/context7",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://github.com/upstash/context7",
+      "color": "#1c735d",
+      "mark": "C7",
+      "tags": ["技术文档", "代码示例"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": true,
+      "reason": "从具体软件库文档入手，帮助开发任务找到参考资料。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["context7-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/upstash/context7",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/upstash/context7",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/upstash/context7",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["api_key"],
+          "endpoint": "https://mcp.context7.com/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "supabase",
+      "slug": "supabase",
+      "name": "Supabase MCP",
+      "aliases": ["数据库", "supabase"],
+      "summaryZh": "让 AI 助手连接 Supabase，辅助数据库与项目相关工作。",
+      "publisher": "Supabase",
+      "serviceIds": ["supabase"],
+      "category": "data",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/supabase/mcp",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "Apache-2.0",
+      "source": "https://github.com/supabase/mcp",
+      "color": "#249b74",
+      "mark": "SB",
+      "tags": ["数据库", "开发平台"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "适合已经使用 Supabase 的开发者了解接入方式。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["supabase-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/supabase/mcp",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/supabase/mcp",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/supabase/mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "unspecified",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.supabase.com/mcp?read_only=true",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "filesystem",
+      "slug": "filesystem",
+      "name": "Filesystem",
+      "aliases": ["文件系统", "本地文件"],
+      "summaryZh": "在配置的目录范围内，为 AI 提供本地文件访问能力。",
+      "publisher": "Model Context Protocol",
+      "serviceIds": ["filesystem"],
+      "category": "office",
+      "identity": "reference",
+      "identityEvidence": "https://github.com/modelcontextprotocol/servers",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "color": "#b0834b",
+      "mark": "FS",
+      "tags": ["本地文件", "参考实现"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "参考实现；使用前应明确允许访问的目录。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["filesystem-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/modelcontextprotocol/servers",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "@modelcontextprotocol/server-filesystem",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "fetch",
+      "slug": "fetch",
+      "name": "Fetch",
+      "aliases": ["网页抓取", "网页内容"],
+      "summaryZh": "获取网页内容，为 AI 提供便于阅读的资料。",
+      "publisher": "Model Context Protocol",
+      "serviceIds": ["web"],
+      "category": "search-research",
+      "identity": "reference",
+      "identityEvidence": "https://github.com/modelcontextprotocol/servers",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "color": "#9774c1",
+      "mark": "FE",
+      "tags": ["网页读取", "参考实现"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "适合了解网页内容读取的 MCP 参考实现。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["fetch-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/modelcontextprotocol/servers",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "slug": "memory",
+      "name": "Memory",
+      "aliases": ["记忆", "知识图谱"],
+      "summaryZh": "通过知识图谱保存与查找信息，为连续任务提供记忆。",
+      "publisher": "Model Context Protocol",
+      "serviceIds": ["memory"],
+      "category": "knowledge",
+      "identity": "reference",
+      "identityEvidence": "https://github.com/modelcontextprotocol/servers",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "color": "#806ac0",
+      "mark": "ME",
+      "tags": ["知识图谱", "参考实现"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "用于探索知识图谱式记忆的参考实现。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["memory-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "sourceCode", "distributions"]
+        },
+        {
+          "id": "identity",
+          "url": "https://github.com/modelcontextprotocol/servers",
+          "kind": "publisher",
+          "reviewedAt": "2026-10-22",
+          "fields": ["identity"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "@modelcontextprotocol/server-memory",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "firecrawl",
+      "slug": "firecrawl",
+      "name": "Firecrawl MCP",
+      "aliases": ["firecrawl", "Firecrawl"],
+      "summaryZh": "搜索与提取网页内容，为研究和信息整理提供结构化资料。",
+      "publisher": "Firecrawl",
+      "serviceIds": ["firecrawl"],
+      "category": "search-research",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "color": "#677b50",
+      "mark": "FM",
+      "tags": ["搜索与研究", "firecrawl"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "提供网页搜索和内容处理，适合资料收集工作流。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["firecrawl-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "firecrawl-mcp",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "exa",
+      "slug": "exa",
+      "name": "Exa MCP",
+      "aliases": ["exa", "Exa"],
+      "summaryZh": "在 AI 中搜索网页、读取内容并开展多步研究。",
+      "publisher": "Exa",
+      "serviceIds": ["exa"],
+      "category": "search-research",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/exa-labs/exa-mcp-server",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "客户端仓库 MIT；服务端未确认",
+      "source": "https://github.com/exa-labs/exa-mcp-server",
+      "color": "#677b50",
+      "mark": "EM",
+      "tags": ["搜索与研究", "exa"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "提供托管端点；匿名与登录使用的限制应按上游说明核对。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["exa-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/exa-labs/exa-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/exa-labs/exa-mcp-server",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["none", "oauth", "api_key"],
+          "endpoint": "https://mcp.exa.ai/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "tavily",
+      "slug": "tavily",
+      "name": "Tavily MCP",
+      "aliases": ["tavily", "Tavily"],
+      "summaryZh": "通过搜索、提取和爬取能力辅助资料查询与研究。",
+      "publisher": "Tavily",
+      "serviceIds": ["tavily"],
+      "category": "search-research",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/tavily-ai/tavily-mcp",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/tavily-ai/tavily-mcp",
+      "color": "#677b50",
+      "mark": "TM",
+      "tags": ["搜索与研究", "tavily"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "适合需要网页搜索与内容提取的研究任务。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["tavily-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/tavily-ai/tavily-mcp",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/tavily-ai/tavily-mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.tavily.com/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "brave-search",
+      "slug": "brave-search",
+      "name": "Brave Search MCP",
+      "aliases": ["brave-search", "Brave"],
+      "summaryZh": "将 Brave Search API 接入 AI，查询网页、新闻等信息。",
+      "publisher": "Brave",
+      "serviceIds": ["brave-search"],
+      "category": "search-research",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/brave/brave-search-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/brave/brave-search-mcp-server",
+      "color": "#677b50",
+      "mark": "BS",
+      "tags": ["搜索与研究", "brave-search"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "本地 stdio 接入需要 Brave API 凭证；服务费用需另行确认。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["brave-search-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/brave/brave-search-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "@brave/brave-search-mcp-server",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "notion",
+      "slug": "notion",
+      "name": "Notion MCP Server",
+      "aliases": ["notion", "Notion"],
+      "summaryZh": "连接 Notion 内容，辅助文档查询和工作区信息处理。",
+      "publisher": "Notion",
+      "serviceIds": ["notion"],
+      "category": "knowledge",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/makenotion/notion-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/makenotion/notion-mcp-server",
+      "color": "#8478a1",
+      "mark": "NM",
+      "tags": ["文档与知识", "notion"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "此记录对应公开仓库实现，具体授权范围请按上游配置。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["notion-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/makenotion/notion-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "@notionhq/notion-mcp-server",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "slack-community",
+      "slug": "slack-community",
+      "name": "Slack MCP · Zencoder",
+      "aliases": ["slack", "Zencoder"],
+      "summaryZh": "以社区实现连接 Slack，辅助消息与工作区信息处理。",
+      "publisher": "Zencoder",
+      "serviceIds": ["slack"],
+      "category": "office",
+      "identity": "community",
+      "identityEvidence": "https://github.com/zencoderai/slack-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT / Apache-2.0（不同部分）",
+      "source": "https://github.com/zencoderai/slack-mcp-server",
+      "color": "#8f6f9f",
+      "mark": "SM",
+      "tags": ["办公与协作", "slack"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "由 Zencoder 维护，属于社区连接器，不代表 Slack 官方发布。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["slack-community-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/zencoderai/slack-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/zencoderai/slack-mcp-server",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "google-workspace",
+      "slug": "google-workspace",
+      "name": "Google Workspace MCP",
+      "aliases": ["google-workspace", "taylorwilsdon"],
+      "summaryZh": "连接邮件、日历和云端文档等 Google Workspace 工具。",
+      "publisher": "taylorwilsdon",
+      "serviceIds": ["google-workspace"],
+      "category": "office",
+      "identity": "community",
+      "identityEvidence": "https://github.com/taylorwilsdon/google_workspace_mcp",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/taylorwilsdon/google_workspace_mcp",
+      "color": "#8f6f9f",
+      "mark": "GW",
+      "tags": ["办公与协作", "google-workspace"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "由社区开发者维护，适合探索跨办公服务的工作流。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["google-workspace-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/taylorwilsdon/google_workspace_mcp",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/taylorwilsdon/google_workspace_mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "unspecified",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["oauth"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "airtable",
+      "slug": "airtable",
+      "name": "Airtable MCP Server",
+      "aliases": ["airtable", "domdomegg"],
+      "summaryZh": "查看 Airtable 表结构，并读取或更新允许访问的数据记录。",
+      "publisher": "domdomegg",
+      "serviceIds": ["airtable"],
+      "category": "data",
+      "identity": "community",
+      "identityEvidence": "https://github.com/domdomegg/airtable-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/domdomegg/airtable-mcp-server",
+      "color": "#3c8376",
+      "mark": "AM",
+      "tags": ["数据与数据库", "airtable"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "由社区开发者维护；使用前核对数据访问权限。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["airtable-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/domdomegg/airtable-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/domdomegg/airtable-mcp-server",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "neon",
+      "slug": "neon",
+      "name": "Neon MCP Server",
+      "aliases": ["neon", "Neon"],
+      "summaryZh": "在 AI 工作流中使用 Neon 管理 API 与数据库相关能力。",
+      "publisher": "Neon",
+      "serviceIds": ["neon"],
+      "category": "data",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/neondatabase/mcp-server-neon",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/neondatabase/mcp-server-neon",
+      "color": "#3c8376",
+      "mark": "NM",
+      "tags": ["数据与数据库", "neon"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "适合已有 Neon 项目的开发者了解数据库接入方式。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["neon-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/neondatabase/mcp-server-neon",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/neondatabase/mcp-server-neon",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "unspecified",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.neon.tech/mcp?readonly=true",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "mongodb",
+      "slug": "mongodb",
+      "name": "MongoDB MCP Server",
+      "aliases": ["mongodb", "MongoDB"],
+      "summaryZh": "连接 MongoDB 数据库与 Atlas，辅助查询和数据库工作。",
+      "publisher": "MongoDB",
+      "serviceIds": ["mongodb"],
+      "category": "data",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/mongodb-js/mongodb-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "Apache-2.0",
+      "source": "https://github.com/mongodb-js/mongodb-mcp-server",
+      "color": "#3c8376",
+      "mark": "MM",
+      "tags": ["数据与数据库", "mongodb"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "支持多种连接条件，本记录先收录本地 stdio 方式。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["mongodb-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "redis",
+      "slug": "redis",
+      "name": "Redis MCP Server",
+      "aliases": ["redis", "Redis"],
+      "summaryZh": "让 AI 查询与使用 Redis 中的数据，辅助数据管理任务。",
+      "publisher": "Redis",
+      "serviceIds": ["redis"],
+      "category": "data",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/redis/mcp-redis",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/redis/mcp-redis",
+      "color": "#3c8376",
+      "mark": "RM",
+      "tags": ["数据与数据库", "redis"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "连接认证取决于 Redis 部署，不将本地示例归为普遍免认证。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["redis-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/redis/mcp-redis",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/redis/mcp-redis",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["unknown"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "qdrant",
+      "slug": "qdrant",
+      "name": "Qdrant MCP Server",
+      "aliases": ["qdrant", "Qdrant"],
+      "summaryZh": "通过 Qdrant 保存与检索信息，为 AI 工作流提供向量数据能力。",
+      "publisher": "Qdrant",
+      "serviceIds": ["qdrant"],
+      "category": "data",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/qdrant/mcp-server-qdrant",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "Apache-2.0",
+      "source": "https://github.com/qdrant/mcp-server-qdrant",
+      "color": "#3c8376",
+      "mark": "QM",
+      "tags": ["数据与数据库", "qdrant"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "此记录先展示本地 stdio 方式，其他传输可参考上游。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["qdrant-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/qdrant/mcp-server-qdrant",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/qdrant/mcp-server-qdrant",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["unknown"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "sentry",
+      "slug": "sentry",
+      "name": "Sentry MCP",
+      "aliases": ["sentry", "Sentry"],
+      "summaryZh": "在 AI 中查询 Sentry 的错误、问题与性能相关信息。",
+      "publisher": "Sentry",
+      "serviceIds": ["sentry"],
+      "category": "infrastructure",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/getsentry/toolkit",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://github.com/getsentry/toolkit",
+      "color": "#6780a3",
+      "mark": "SM",
+      "tags": ["云与运维", "sentry"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "源码已迁至 Sentry Toolkit，使用前核对对应 MCP 文档。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["sentry-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/getsentry/toolkit",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://mcp.sentry.dev/",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.sentry.dev/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "cloudflare-api",
+      "slug": "cloudflare-api",
+      "name": "Cloudflare API MCP",
+      "aliases": ["cloudflare", "Cloudflare"],
+      "summaryZh": "让 AI 通过 MCP 使用 Cloudflare API，处理云平台相关任务。",
+      "publisher": "Cloudflare",
+      "serviceIds": ["cloudflare"],
+      "category": "infrastructure",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/cloudflare/mcp",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://github.com/cloudflare/mcp",
+      "color": "#6780a3",
+      "mark": "CA",
+      "tags": ["云与运维", "cloudflare"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "使用独立 API MCP 项目，避免把多个领域服务混成一条记录。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["cloudflare-api-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/cloudflare/mcp",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/cloudflare/mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["unknown"],
+          "endpoint": "https://mcp.cloudflare.com/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "blender",
+      "slug": "blender",
+      "name": "MCP for Blender",
+      "aliases": ["blender", "ahujasid"],
+      "summaryZh": "通过社区插件让 AI 与 Blender 交互，辅助三维创作。",
+      "publisher": "ahujasid",
+      "serviceIds": ["blender"],
+      "category": "media",
+      "identity": "community",
+      "identityEvidence": "https://github.com/ahujasid/mcp-for-blender",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/ahujasid/mcp-for-blender",
+      "color": "#ac805c",
+      "mark": "MF",
+      "tags": ["设计与多媒体", "blender"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "社区项目，与 Blender Foundation 无隶属关系；需配套插件。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["blender-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/ahujasid/mcp-for-blender",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/ahujasid/mcp-for-blender",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["unknown"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "elevenlabs",
+      "slug": "elevenlabs",
+      "name": "ElevenLabs Hosted MCP",
+      "aliases": ["elevenlabs", "ElevenLabs"],
+      "summaryZh": "通过 ElevenLabs 托管 MCP 将语音相关能力接入 AI 工作流。",
+      "publisher": "ElevenLabs",
+      "serviceIds": ["elevenlabs"],
+      "category": "media",
+      "identity": "first_party",
+      "identityEvidence": "https://elevenlabs.io/docs/eleven-agents/operate/hosted-mcp",
+      "deployment": "remote",
+      "transport": ["unknown"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://elevenlabs.io/docs/eleven-agents/operate/hosted-mcp",
+      "color": "#ac805c",
+      "mark": "EH",
+      "tags": ["设计与多媒体", "elevenlabs"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "上游已推荐托管版本，区别于已弃用的本地仓库实现。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["elevenlabs-claude-connector"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://elevenlabs.io/docs/eleven-agents/operate/hosted-mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程接入",
+          "deployment": "remote",
+          "transport": ["unknown"],
+          "authentication": ["oauth"],
+          "endpoint": "https://api.elevenlabs.io/v1/mcp",
+          "package": "",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "slug": "git",
+      "name": "Git",
+      "aliases": ["git", "Model Context Protocol"],
+      "summaryZh": "让 AI 查看本地 Git 仓库信息，辅助版本记录与代码协作。",
+      "publisher": "Model Context Protocol",
+      "serviceIds": ["git"],
+      "category": "development",
+      "identity": "reference",
+      "identityEvidence": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "color": "#536c8f",
+      "mark": "G",
+      "tags": ["开发与代码", "git"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "MCP 参考实现，使用前确认本地仓库路径。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["git-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "mcp-server-git",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "sequential-thinking",
+      "slug": "sequential-thinking",
+      "name": "Sequential Thinking",
+      "aliases": ["reasoning", "Model Context Protocol"],
+      "summaryZh": "通过分步骤思考工具组织复杂问题，探索结构化推理工作流。",
+      "publisher": "Model Context Protocol",
+      "serviceIds": ["reasoning"],
+      "category": "knowledge",
+      "identity": "reference",
+      "identityEvidence": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "none",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+      "color": "#8478a1",
+      "mark": "ST",
+      "tags": ["文档与知识", "reasoning"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "参考实现，用于组织思考过程，不把它视为结果正确性的保证。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["sequential-thinking-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["none"],
+          "endpoint": "",
+          "package": "@modelcontextprotocol/server-sequential-thinking",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "figma",
+      "slug": "figma",
+      "name": "Figma MCP Server",
+      "aliases": ["figma", "Figma"],
+      "summaryZh": "把 Figma 设计上下文引入 AI 工作流，辅助设计与代码任务。",
+      "publisher": "Figma",
+      "serviceIds": ["figma"],
+      "category": "media",
+      "identity": "first_party",
+      "identityEvidence": "https://developers.figma.com/docs/figma-mcp-server/",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://developers.figma.com/docs/figma-mcp-server/",
+      "color": "#ac805c",
+      "mark": "FM",
+      "tags": ["设计与多媒体", "figma"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "由 Figma 官方提供；桌面与远程方式的功能和访问条件需分别核对。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["figma-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "unspecified",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.figma.com/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "aws-documentation",
+      "slug": "aws-documentation",
+      "name": "AWS Documentation MCP",
+      "aliases": ["aws", "AWS Labs"],
+      "summaryZh": "为 AI 提供 AWS 文档相关能力，辅助云服务资料查询。",
+      "publisher": "AWS Labs",
+      "serviceIds": ["aws"],
+      "category": "infrastructure",
+      "identity": "first_party",
+      "identityEvidence": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "unknown",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+      "color": "#6780a3",
+      "mark": "AD",
+      "tags": ["云与运维", "aws"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "记录指向具体文档服务目录，避免把整个 AWS MCP 仓库当成单个服务。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["aws-documentation-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "unspecified",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["unknown"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "atlassian-rovo",
+      "slug": "atlassian-rovo",
+      "name": "Atlassian Rovo MCP",
+      "aliases": ["atlassian", "Atlassian"],
+      "summaryZh": "把 Atlassian 工具连接到 AI 助手，辅助团队信息与协作任务。",
+      "publisher": "Atlassian",
+      "serviceIds": ["atlassian"],
+      "category": "office",
+      "identity": "first_party",
+      "identityEvidence": "https://www.atlassian.com/platform/rovo-mcp",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://www.atlassian.com/platform/rovo-mcp",
+      "color": "#8f6f9f",
+      "mark": "AR",
+      "tags": ["办公与协作", "atlassian"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "由 Atlassian 提供，与社区 MCP Atlassian 是不同实现。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["atlassian-rovo-vscode-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://www.atlassian.com/platform/rovo-mcp",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://support.atlassian.com/atlassian-ai-gateway/docs/get-started-with-the-atlassian-remote-mcp-server/",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程 HTTP 接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.atlassian.com/v2/mcp",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "atlassian-community",
+      "slug": "atlassian-community",
+      "name": "MCP Atlassian",
+      "aliases": ["atlassian", "sooperset"],
+      "summaryZh": "以社区实现连接 Jira 与 Confluence，支持多类部署环境。",
+      "publisher": "sooperset",
+      "serviceIds": ["atlassian"],
+      "category": "office",
+      "identity": "community",
+      "identityEvidence": "https://github.com/sooperset/mcp-atlassian",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/sooperset/mcp-atlassian",
+      "color": "#8f6f9f",
+      "mark": "MA",
+      "tags": ["办公与协作", "atlassian"],
+      "reviewedAt": "2026-10-30",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "上游明确说明并非 Atlassian 官方产品，适合对比不同接入需求。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["atlassian-community-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/sooperset/mcp-atlassian",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        },
+        {
+          "id": "setup-review",
+          "url": "https://github.com/sooperset/mcp-atlassian",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-30",
+          "fields": ["distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "unspecified",
+          "label": "本地 stdio 接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "",
+          "sourceIds": ["setup-review"]
+        }
+      ]
+    },
+    {
+      "id": "figma-framelink",
+      "slug": "figma-framelink",
+      "name": "Framelink MCP for Figma",
+      "aliases": ["figma", "GLips"],
+      "summaryZh": "以社区实现向 AI 提供 Figma 布局信息，辅助界面开发。",
+      "publisher": "GLips",
+      "serviceIds": ["figma"],
+      "category": "media",
+      "identity": "community",
+      "identityEvidence": "https://github.com/GLips/Figma-Context-MCP",
+      "deployment": "local",
+      "transport": ["stdio"],
+      "authentication": "api_key",
+      "pricing": "unknown",
+      "sourceCode": "open",
+      "license": "MIT",
+      "source": "https://github.com/GLips/Figma-Context-MCP",
+      "color": "#ac805c",
+      "mark": "FM",
+      "tags": ["设计与多媒体", "figma"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "需要 Figma API 凭证，与 Figma 官方 MCP 独立维护。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["figma-framelink-vscode-local"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://github.com/GLips/Figma-Context-MCP",
+          "kind": "repository",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "local",
+          "label": "本地接入",
+          "deployment": "local",
+          "transport": ["stdio"],
+          "authentication": ["api_key"],
+          "endpoint": "",
+          "package": "figma-developer-mcp",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    },
+    {
+      "id": "slack-official",
+      "slug": "slack-official",
+      "name": "Slack MCP Server",
+      "aliases": ["slack", "Slack"],
+      "summaryZh": "通过 Slack 官方 MCP 查询工作区信息并使用消息相关工具。",
+      "publisher": "Slack",
+      "serviceIds": ["slack"],
+      "category": "office",
+      "identity": "first_party",
+      "identityEvidence": "https://docs.slack.dev/ai/slack-mcp-server/",
+      "deployment": "remote",
+      "transport": ["streamable_http"],
+      "authentication": "oauth",
+      "pricing": "unknown",
+      "sourceCode": "unknown",
+      "license": "待确认",
+      "source": "https://docs.slack.dev/ai/slack-mcp-server/",
+      "color": "#8f6f9f",
+      "mark": "SM",
+      "tags": ["办公与协作", "slack"],
+      "reviewedAt": "2026-10-22",
+      "testStatus": "untested",
+      "featured": false,
+      "reason": "官方文档明确远程传输与 OAuth；访问仍受工作区管理员与授权范围约束。",
+      "status": "published",
+      "isAuthor": false,
+      "guideIds": ["slack-official-cursor-remote"],
+      "verificationIds": [],
+      "sourceRefs": [
+        {
+          "id": "upstream",
+          "url": "https://docs.slack.dev/ai/slack-mcp-server/",
+          "kind": "documentation",
+          "reviewedAt": "2026-10-22",
+          "fields": ["summaryZh", "identity", "sourceCode", "distributions"]
+        }
+      ],
+      "distributions": [
+        {
+          "id": "remote",
+          "label": "远程接入",
+          "deployment": "remote",
+          "transport": ["streamable_http"],
+          "authentication": ["oauth"],
+          "endpoint": "https://mcp.slack.com/mcp",
+          "package": "",
+          "sourceIds": ["upstream"]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "airtable",
+      "name": "domdomegg",
+      "description": "airtable 的服务或能力接入实现"
+    },
+    {
+      "id": "atlassian",
+      "name": "Atlassian",
+      "description": "atlassian 的服务或能力接入实现"
+    },
+    {
+      "id": "aws",
+      "name": "AWS",
+      "description": "aws 的服务或能力接入实现"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "description": "blender 的服务或能力接入实现"
+    },
+    {
+      "id": "brave-search",
+      "name": "Brave Search",
+      "description": "brave-search 的服务或能力接入实现"
+    },
+    {
+      "id": "browser",
+      "name": "浏览器",
+      "description": "不同浏览器工具的接入实现；这里是能力分组，不表示同一个服务商"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "description": "cloudflare 的服务或能力接入实现"
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "description": "软件文档与代码示例"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "description": "elevenlabs 的服务或能力接入实现"
+    },
+    {
+      "id": "exa",
+      "name": "Exa",
+      "description": "exa 的服务或能力接入实现"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "description": "figma 的服务或能力接入实现"
+    },
+    {
+      "id": "filesystem",
+      "name": "本地文件",
+      "description": "本地文件访问能力"
+    },
+    {
+      "id": "firecrawl",
+      "name": "Firecrawl",
+      "description": "firecrawl 的服务或能力接入实现"
+    },
+    {
+      "id": "git",
+      "name": "Model Context Protocol",
+      "description": "git 的服务或能力接入实现"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "description": "代码托管与开发协作"
+    },
+    {
+      "id": "google-workspace",
+      "name": "Google Workspace",
+      "description": "google-workspace 的服务或能力接入实现"
+    },
+    {
+      "id": "memory",
+      "name": "知识记忆",
+      "description": "信息持久化与知识图谱"
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "description": "mongodb 的服务或能力接入实现"
+    },
+    {
+      "id": "neon",
+      "name": "Neon",
+      "description": "neon 的服务或能力接入实现"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "description": "notion 的服务或能力接入实现"
+    },
+    {
+      "id": "qdrant",
+      "name": "Qdrant",
+      "description": "qdrant 的服务或能力接入实现"
+    },
+    {
+      "id": "reasoning",
+      "name": "结构化推理",
+      "description": "reasoning 的服务或能力接入实现"
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "description": "redis 的服务或能力接入实现"
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "description": "sentry 的服务或能力接入实现"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "description": "slack 的服务或能力接入实现"
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "description": "数据库与开发平台"
+    },
+    {
+      "id": "tavily",
+      "name": "Tavily",
+      "description": "tavily 的服务或能力接入实现"
+    },
+    {
+      "id": "web",
+      "name": "网页内容",
+      "description": "网页读取能力"
+    }
+  ],
+  "verifications": []
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MCP Atlas Catalog v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "snapshot",
+    "categories",
+    "services",
+    "servers",
+    "verifications"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "snapshot": { "type": "string", "minLength": 1 },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "icon", "description"],
+        "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "name": { "$ref": "#/definitions/text" },
+          "icon": { "$ref": "#/definitions/text" },
+          "description": { "$ref": "#/definitions/text" }
+        }
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "description"],
+        "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "name": { "$ref": "#/definitions/text" },
+          "description": { "$ref": "#/definitions/text" }
+        }
+      }
+    },
+    "servers": { "type": "array", "items": { "$ref": "#/definitions/server" } },
+    "verifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "serverId",
+          "distributionId",
+          "scope",
+          "result",
+          "testedAt",
+          "clientVersion",
+          "evidence"
+        ],
+        "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "serverId": { "$ref": "#/definitions/id" },
+          "distributionId": { "$ref": "#/definitions/id" },
+          "scope": { "enum": ["configuration", "connection", "task"] },
+          "result": { "enum": ["passed", "failed", "blocked"] },
+          "testedAt": { "type": "string", "format": "date" },
+          "clientVersion": { "$ref": "#/definitions/text" },
+          "evidence": { "$ref": "#/definitions/text" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "maxLength": 100
+    },
+    "text": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "strings": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/text" },
+      "uniqueItems": true
+    },
+    "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "transport": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["stdio", "streamable_http", "legacy_sse", "custom", "unknown"]
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "deployment",
+        "transport",
+        "authentication",
+        "endpoint",
+        "package",
+        "sourceIds"
+      ],
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "label": { "$ref": "#/definitions/text" },
+        "deployment": { "enum": ["local", "remote", "both", "unknown"] },
+        "transport": { "$ref": "#/definitions/transport" },
+        "authentication": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["none", "api_key", "oauth", "unknown"] }
+        },
+        "endpoint": {
+          "anyOf": [{ "const": "" }, { "$ref": "#/definitions/url" }]
+        },
+        "package": { "type": "string", "maxLength": 500 },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/id" }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "url", "kind", "reviewedAt", "fields"],
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "url": { "$ref": "#/definitions/url" },
+        "kind": {
+          "enum": [
+            "repository",
+            "publisher",
+            "documentation",
+            "registry",
+            "pricing"
+          ]
+        },
+        "reviewedAt": { "type": "string", "format": "date" },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "summaryZh",
+              "identity",
+              "distributions",
+              "sourceCode",
+              "pricing",
+              "upstreamUpdatedAt"
+            ]
+          }
+        }
+      }
+    },
+    "server": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "slug",
+        "name",
+        "aliases",
+        "summaryZh",
+        "publisher",
+        "serviceIds",
+        "category",
+        "identity",
+        "identityEvidence",
+        "deployment",
+        "transport",
+        "authentication",
+        "pricing",
+        "sourceCode",
+        "license",
+        "source",
+        "color",
+        "mark",
+        "tags",
+        "reviewedAt",
+        "testStatus",
+        "featured",
+        "reason",
+        "status",
+        "isAuthor",
+        "guideIds",
+        "verificationIds",
+        "sourceRefs",
+        "distributions"
+      ],
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "slug": { "$ref": "#/definitions/id" },
+        "name": { "$ref": "#/definitions/text" },
+        "aliases": { "$ref": "#/definitions/strings" },
+        "summaryZh": { "type": "string", "minLength": 10, "maxLength": 240 },
+        "publisher": { "$ref": "#/definitions/text" },
+        "serviceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/id" }
+        },
+        "category": { "$ref": "#/definitions/id" },
+        "identity": {
+          "enum": ["first_party", "community", "reference", "unknown"]
+        },
+        "identityEvidence": { "$ref": "#/definitions/url" },
+        "deployment": { "enum": ["local", "remote", "both", "unknown"] },
+        "transport": { "$ref": "#/definitions/transport" },
+        "authentication": { "enum": ["none", "api_key", "oauth", "unknown"] },
+        "pricing": { "enum": ["free", "freemium", "paid", "mixed", "unknown"] },
+        "sourceCode": {
+          "enum": ["open", "source_available", "closed", "unknown"]
+        },
+        "license": { "$ref": "#/definitions/text" },
+        "source": { "$ref": "#/definitions/url" },
+        "color": { "type": "string", "pattern": "^#[a-fA-F0-9]{6}$" },
+        "mark": { "type": "string", "minLength": 1, "maxLength": 4 },
+        "tags": {
+          "type": "array",
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/text" }
+        },
+        "reviewedAt": { "type": "string", "format": "date" },
+        "testStatus": { "enum": ["untested", "passed", "failed", "blocked"] },
+        "upstreamUpdatedAt": { "type": "string", "format": "date" },
+        "featured": { "type": "boolean" },
+        "reason": { "$ref": "#/definitions/text" },
+        "status": { "enum": ["published", "archived", "withdrawn"] },
+        "isAuthor": { "type": "boolean" },
+        "guideIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/id" }
+        },
+        "verificationIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/id" }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/source" }
+        },
+        "distributions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/distribution" }
+        }
+      }
+    }
+  }
+}
