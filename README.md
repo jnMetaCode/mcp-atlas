@@ -81,6 +81,16 @@ Figma、Slack、Atlassian 均已关联官方和社区实现，可从服务索引
 
 ## 维护工具
 
+### Skills 已登录只读扫描
+
+若匿名 GitHub API 受限，可先在本机完成 `gh auth login`，再运行：
+
+```sh
+npm run skills:discover -- --github-cli
+```
+
+该模式显式使用已登录的 GitHub CLI 读取公开仓库目录树，指定 github.com、GET 请求，并限制超时与响应大小。脚本不读取、打印或保存 Token，也不执行上游技能。报告保存在被 Git 忽略的 `.maintenance/skills/`。2026-11-04 首次完整扫描成功：58 项观察、26 项内容标识一致、32 项新候选；新候选未自动收录。
+
 Skills 扫描状态分为 `needs_review`（新候选）、`needs_recheck`（缺少已审核内容基线）、`already_listed`（内容标识一致）和 `upstream_changed`（上游内容变化）。内容基线只在下载正文与已审核 SHA-256 一致时记录，不因扫描观察到新版本而自动推进。上游缺失不会直接删除正式条目。
 
 Skills 独立目录包含 26 项、3 个维护者，提供分类、搜索和各来源的安装说明。公开可读不代表开源或已实测；许可按技能目录单独判断。结构化下载位于 `/data/v1/skills.json`。
