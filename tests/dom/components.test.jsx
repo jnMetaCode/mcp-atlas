@@ -27,6 +27,34 @@ beforeEach(() => {
 });
 afterEach(() => cleanup());
 const cards = () => document.querySelectorAll(".result-grid .project-card");
+test("复制未完成时修改申请，旧请求不能给新内容标记已复制", async () => {
+  let complete;
+  navigator.clipboard.writeText = () =>
+    new Promise((resolve) => {
+      complete = resolve;
+    });
+  const view = render(<Submission />);
+  fireEvent.change(
+    view.getByRole("textbox", { name: "项目名称", exact: true }),
+    { target: { value: "Example" } },
+  );
+  fireEvent.change(view.getByRole("textbox", { name: "项目或文档链接" }), {
+    target: { value: "https://example.com" },
+  });
+  fireEvent.change(view.getByRole("textbox", { name: "能解决什么问题？" }), {
+    target: { value: "原始说明" },
+  });
+  fireEvent.click(view.getByRole("button", { name: "复制申请内容" }));
+  fireEvent.change(view.getByRole("textbox", { name: "能解决什么问题？" }), {
+    target: { value: "修改后的说明" },
+  });
+  await act(async () => {
+    complete();
+    await Promise.resolve();
+  });
+  assert(view.getByRole("button", { name: "复制申请内容" }));
+  assert(!view.getByRole("status").textContent.includes("申请内容已复制"));
+});
 test("技能推荐入口选择独立类型并携带客户端与安装依据", async () => {
   history.replaceState(null, "", "/submit/?type=skill");
   const view = render(<Submission />);

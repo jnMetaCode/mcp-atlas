@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import catalog from "../lib/data";
 import site from "../../data/site.json";
 import {
@@ -25,6 +25,7 @@ export default function Submission() {
   const [fields, setFields] = useState(initial);
   const [status, setStatus] = useState("");
   const [copied, setCopied] = useState(false);
+  const copyRevision = useRef(0);
   const repository = repositoryUrl(site.repository);
   const text = contributionText(fields);
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function Submission() {
       });
   }, []);
   function change(key: keyof typeof initial, value: string) {
+    copyRevision.current++;
     setFields((current) => ({ ...current, [key]: value }));
     setCopied(false);
     setStatus("");
@@ -77,11 +79,14 @@ export default function Submission() {
   }
   async function copy() {
     if (!validate()) return;
+    const revision = ++copyRevision.current;
     try {
       await navigator.clipboard.writeText(text);
+      if (revision !== copyRevision.current) return;
       setCopied(true);
       setStatus("申请内容已复制，尚未提交。");
     } catch {
+      if (revision !== copyRevision.current) return;
       setCopied(false);
       setStatus("剪贴板不可用，请展开下方文本手动复制，或下载申请。");
     }
