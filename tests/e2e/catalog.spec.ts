@@ -1,6 +1,7 @@
 import { test, expect, type Page } from "@playwright/test";
 import catalog from "../../data/catalog.json";
 import guides from "../../data/guides.json";
+import skills from "../../data/skills.json";
 import { withBasePath } from "../../src/lib/base-path.mjs";
 test.beforeEach(async ({ page }) => {
   const goto = page.goto.bind(page);
@@ -46,7 +47,7 @@ test("Skills 跨维护者筛选、中文检索及空结果恢复", async ({ page
     page.getByRole("heading", { name: "没有匹配的技能" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "清空技能筛选" }).click();
-  await expect(page.locator(".index-card")).toHaveCount(26);
+  await expect(page.locator(".index-card")).toHaveCount(skills.length);
 });
 test("Skills 独立目录可以进入中文安装页，并说明集合与未实测范围", async ({
   page,

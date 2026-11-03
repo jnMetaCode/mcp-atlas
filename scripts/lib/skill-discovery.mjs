@@ -1,4 +1,7 @@
 export function skillObservations(source, tree, published) {
+  const skillRoot = source.skillRoot || "skills";
+  if (!/^(?:[a-z0-9_-]+\/)*skills$/.test(skillRoot))
+    throw new Error("Invalid skill root");
   if (
     tree?.truncated ||
     !Array.isArray(tree?.tree) ||
@@ -10,7 +13,8 @@ export function skillObservations(source, tree, published) {
   for (const entry of tree.tree) {
     if (
       entry.type !== "blob" ||
-      !/^skills\/[a-z0-9-]+\/SKILL\.md$/.test(entry.path)
+      !entry.path.startsWith(skillRoot + "/") ||
+      !/^[a-z0-9-]+\/SKILL\.md$/.test(entry.path.slice(skillRoot.length + 1))
     )
       continue;
     if (!/^[a-f0-9]{40,64}$/.test(entry.sha || "") || seen.has(entry.path))

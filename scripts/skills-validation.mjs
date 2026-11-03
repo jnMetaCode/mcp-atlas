@@ -25,7 +25,7 @@ export function validateSkills(skills, catalog) {
     identities.add(identity);
     if (
       !/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/.test(s.repository) ||
-      !/^skills\/[a-z0-9-]+$/.test(s.sourcePath)
+      !/^(?:[a-z0-9_-]+\/)*skills\/[a-z0-9-]+$/.test(s.sourcePath)
     )
       errors.push(s.id + ": invalid source identity");
     try {

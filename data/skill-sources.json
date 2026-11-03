@@ -1,5 +1,28 @@
 [
-  { "repository": "anthropics/skills", "ref": "main" },
-  { "repository": "vercel-labs/agent-skills", "ref": "main" },
-  { "repository": "getsentry/skills", "ref": "main" }
+  {
+    "repository": "anthropics/skills",
+    "ref": "main"
+  },
+  {
+    "repository": "vercel-labs/agent-skills",
+    "ref": "main"
+  },
+  {
+    "repository": "getsentry/skills",
+    "ref": "main"
+  },
+  {
+    "repository": "expo/skills",
+    "ref": "main",
+    "skillRoot": "plugins/expo/skills"
+  },
+  {
+    "repository": "cloudflare/skills",
+    "ref": "main"
+  },
+  {
+    "repository": "stripe/ai",
+    "ref": "main",
+    "skillRoot": "providers/claude/plugin/skills"
+  }
 ]

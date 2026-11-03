@@ -4,7 +4,7 @@
 
 **[在线体验 Beta](https://jnmetacode.github.io/mcp-atlas) · [Skills 技能目录](https://jnmetacode.github.io/mcp-atlas/skills/) · [反馈问题](https://github.com/jnMetaCode/mcp-atlas/issues/new/choose)**
 
-另有 26 项 Agent Skills，按任务与维护者检索，提供来源及中文安装说明。MCP 与 Skills 分开收录，便于判断连接条件与使用方法。
+另有 40 项 Agent Skills，按任务与维护者检索，提供来源及中文安装说明。MCP 与 Skills 分开收录，便于判断连接条件与使用方法。
 
 ## 邀请你试用
 
@@ -93,9 +93,9 @@ npm run skills:discover -- --github-cli
 
 Skills 扫描状态分为 `needs_review`（新候选）、`needs_recheck`（缺少已审核内容基线）、`already_listed`（内容标识一致）和 `upstream_changed`（上游内容变化）。内容基线只在下载正文与已审核 SHA-256 一致时记录，不因扫描观察到新版本而自动推进。上游缺失不会直接删除正式条目。
 
-Skills 独立目录包含 26 项、3 个维护者，提供分类、搜索和各来源的安装说明。公开可读不代表开源或已实测；许可按技能目录单独判断。结构化下载位于 `/data/v1/skills.json`。
+Skills 独立目录包含 40 项、6 个维护者，提供分类、搜索和各来源的安装说明。公开可读不代表开源或已实测；许可按技能目录单独判断。结构化下载位于 `/data/v1/skills.json`。
 
-`npm run skills:discover` 根据 `data/skill-sources.json` 只读扫描指定 GitHub 仓库的 `skills/*/SKILL.md`，按仓库和路径标识已收录项与待审核项。完整扫描成功后才将报告写入 `.maintenance/skills/`，不会修改正式目录或运行上游代码。其他网站目前通过人工来源入口发现，不是全网抓取；第三方榜单和评分不复制。首次联网运行遇到 GitHub HTTP 403，未生成成功报告，需要后续在 API 可用时验证。
+`npm run skills:discover` 根据 `data/skill-sources.json` 只读扫描指定 GitHub 仓库的技能根目录（默认 `skills/*/SKILL.md`，插件子目录通过 `skillRoot` 显式配置），按仓库和路径标识已收录项与待审核项。完整扫描成功后才将报告写入 `.maintenance/skills/`，不会修改正式目录或运行上游代码。其他网站目前通过人工来源入口发现，不是全网抓取；第三方榜单和评分不复制。首次联网运行遇到 GitHub HTTP 403，未生成成功报告，需要后续在 API 可用时验证。
 
 ```sh
 npm run registry:sync

@@ -46,3 +46,24 @@ test("截断、重复与非法对象标识中断批次，无关文件不收录",
     [],
   );
 });
+test("按配置扫描插件子目录，避免复制的其他客户端目录重复入库", () => {
+  const nested = {
+    repository: "example/skills",
+    ref: "main",
+    skillRoot: "plugins/demo/skills",
+  };
+  const nestedTree = {
+    sha,
+    truncated: false,
+    tree: [
+      { type: "blob", path: "plugins/demo/skills/router/SKILL.md", sha },
+      { type: "blob", path: "skills/router/SKILL.md", sha },
+    ],
+  };
+  const result = skillObservations(nested, nestedTree, []);
+  assert.equal(result.length, 1);
+  assert.equal(result[0].path, "plugins/demo/skills/router");
+  assert.throws(() =>
+    skillObservations({ ...nested, skillRoot: "../skills" }, nestedTree, []),
+  );
+});

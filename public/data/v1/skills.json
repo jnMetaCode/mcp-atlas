@@ -778,5 +778,425 @@
     "installSource": "https://github.com/getsentry/skills#installation",
     "removal": "在对应客户端或安装工具中禁用或移除该技能/集合；集合卸载会影响其他技能，已生成文件不会自动回滚。",
     "sourceBlob": "bd92e4a9df47f63bd943bc3d5011da0b3d6e04ff"
+  },
+  {
+    "id": "expo-expo-router",
+    "name": "Expo Router",
+    "category": "移动应用",
+    "summary": "组织 Expo 文件路由、页面导航、模态页和原生标签栏。",
+    "publisher": "Expo",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-router",
+    "repository": "expo/skills",
+    "sourcePath": "plugins/expo/skills/expo-router",
+    "sourceHash": "8f8c08dfdf3149baebe354c1e22f7e54c407d3c19ebe5c1d8b4c782017817f1f",
+    "sourceBlob": "f7abac62220bf2c8508bf20d3421e640487d0aa3",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备可运行的 Expo/React Native 测试项目，先备份代码；新增项目结构技能只针对新项目。"
+    ],
+    "example": "使用 Expo Router 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游 Expo 插件还包含 Expo MCP 配置。平台账号、构建或云服务可能另有权限与费用，不因技能许可免费而免除。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install expo@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/expo/skills#installation",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "expo-expo-data-fetching",
+    "name": "Expo Data Fetching",
+    "category": "移动应用",
+    "summary": "处理 Expo 网络请求、缓存、离线状态及加载和错误界面。",
+    "publisher": "Expo",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-data-fetching",
+    "repository": "expo/skills",
+    "sourcePath": "plugins/expo/skills/expo-data-fetching",
+    "sourceHash": "b592a1d7ad181af36ad99209007659b20e6ae05f34f25b95b3b3d30e19c65e51",
+    "sourceBlob": "67516d8e6f0ede6b1c7bef59ba3c06ac356a6263",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备可运行的 Expo/React Native 测试项目，先备份代码；新增项目结构技能只针对新项目。"
+    ],
+    "example": "使用 Expo Data Fetching 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游 Expo 插件还包含 Expo MCP 配置。平台账号、构建或云服务可能另有权限与费用，不因技能许可免费而免除。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install expo@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/expo/skills#installation",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "expo-expo-animation",
+    "name": "Expo Animation",
+    "category": "移动应用",
+    "summary": "实现 React Native/Expo 动画、手势、转场和触觉反馈。",
+    "publisher": "Expo",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-animation",
+    "repository": "expo/skills",
+    "sourcePath": "plugins/expo/skills/expo-animation",
+    "sourceHash": "7af0f5e9aa4ae6887fc7938cb9ec08f8cfa922a5154e15c355d1ac53e8d659fe",
+    "sourceBlob": "015ebb22382b1b0d1621002773ab71af94f2d24b",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备可运行的 Expo/React Native 测试项目，先备份代码；新增项目结构技能只针对新项目。"
+    ],
+    "example": "使用 Expo Animation 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游 Expo 插件还包含 Expo MCP 配置。平台账号、构建或云服务可能另有权限与费用，不因技能许可免费而免除。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install expo@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/expo/skills#installation",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "expo-expo-upgrade",
+    "name": "Expo Upgrade",
+    "category": "移动应用",
+    "summary": "规划 Expo SDK 升级并处理依赖和弃用问题。",
+    "publisher": "Expo",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-upgrade",
+    "repository": "expo/skills",
+    "sourcePath": "plugins/expo/skills/expo-upgrade",
+    "sourceHash": "8e9201265d48eba88d9e08a1a364466c8a90b09beb3d0fe5430d94bad38f51e0",
+    "sourceBlob": "db32f2c5552085601e17c4b8e46f907dea24b057",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备可运行的 Expo/React Native 测试项目，先备份代码；新增项目结构技能只针对新项目。"
+    ],
+    "example": "使用 Expo Upgrade 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游 Expo 插件还包含 Expo MCP 配置。平台账号、构建或云服务可能另有权限与费用，不因技能许可免费而免除。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install expo@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/expo/skills#installation",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "expo-expo-project-structure",
+    "name": "Expo Project Structure",
+    "category": "移动应用",
+    "summary": "为新的 Expo 项目安排路由和业务目录，不要求重构现有应用。",
+    "publisher": "Expo",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-project-structure",
+    "repository": "expo/skills",
+    "sourcePath": "plugins/expo/skills/expo-project-structure",
+    "sourceHash": "f644f8802b6d3b696401dab56c3bb6236531a9882747ed9529ddb14958562822",
+    "sourceBlob": "9d6624ac27181961eff376b4285c4dce76750daa",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备可运行的 Expo/React Native 测试项目，先备份代码；新增项目结构技能只针对新项目。"
+    ],
+    "example": "使用 Expo Project Structure 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游 Expo 插件还包含 Expo MCP 配置。平台账号、构建或云服务可能另有权限与费用，不因技能许可免费而免除。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install expo@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/expo/skills#installation",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "expo-expo-native-ui",
+    "name": "Expo Native UI",
+    "category": "移动应用",
+    "summary": "构建符合原生平台体验的 Expo 界面与控件。",
+    "publisher": "Expo",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-native-ui",
+    "repository": "expo/skills",
+    "sourcePath": "plugins/expo/skills/expo-native-ui",
+    "sourceHash": "a54ee681808bdeece32d9219ce74b5e4f86156d76cc6d00fb21ac2633f44c64f",
+    "sourceBlob": "9bd26c48aab5682031b7a0b592148980252ca238",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备可运行的 Expo/React Native 测试项目，先备份代码；新增项目结构技能只针对新项目。"
+    ],
+    "example": "使用 Expo Native UI 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游 Expo 插件还包含 Expo MCP 配置。平台账号、构建或云服务可能另有权限与费用，不因技能许可免费而免除。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install expo@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/expo/skills#installation",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "cloudflare-agents-sdk",
+    "name": "Cloudflare Agents SDK",
+    "category": "云与部署",
+    "summary": "为 Cloudflare Agents 应用组织状态、通信和服务端能力。",
+    "publisher": "Cloudflare",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/cloudflare/skills/tree/main/skills/agents-sdk",
+    "repository": "cloudflare/skills",
+    "sourcePath": "skills/agents-sdk",
+    "sourceHash": "9bda4bd3adc5ab09e30c19ea6b9a0bf673f0a4b190bf7624fc1b0dc5f1fcf9c1",
+    "sourceBlob": "46dc611f3f7666461dbd14f5f809e82629b3bfa4",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，第三方文件按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Cloudflare 测试项目；需要实际云操作时再核对账号、权限及 Wrangler 等依赖。"
+    ],
+    "example": "使用 Cloudflare Agents SDK 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游插件包含 Cloudflare MCP 配置；可能触发资源创建、更新或部署，先在测试资源中验证并检查费用。"
+    ],
+    "relatedServers": ["cloudflare-api"],
+    "installCommand": "/plugin marketplace add cloudflare/skills\n/plugin install cloudflare@cloudflare",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/cloudflare/skills",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "cloudflare-durable-objects",
+    "name": "Durable Objects",
+    "category": "云与部署",
+    "summary": "设计和检查 Durable Objects 持久状态与协调逻辑。",
+    "publisher": "Cloudflare",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/cloudflare/skills/tree/main/skills/durable-objects",
+    "repository": "cloudflare/skills",
+    "sourcePath": "skills/durable-objects",
+    "sourceHash": "ef690603d7d998a25ba9748c79f399bb75d943fe1955ba258167116c101ef98c",
+    "sourceBlob": "80fb75785e42c023cd3cdcbf5b9a9ac6909ecc25",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，第三方文件按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Cloudflare 测试项目；需要实际云操作时再核对账号、权限及 Wrangler 等依赖。"
+    ],
+    "example": "使用 Durable Objects 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游插件包含 Cloudflare MCP 配置；可能触发资源创建、更新或部署，先在测试资源中验证并检查费用。"
+    ],
+    "relatedServers": ["cloudflare-api"],
+    "installCommand": "/plugin marketplace add cloudflare/skills\n/plugin install cloudflare@cloudflare",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/cloudflare/skills",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "cloudflare-workers-best-practices",
+    "name": "Workers Best Practices",
+    "category": "云与部署",
+    "summary": "检查 Workers 的代码、运行约束和生产配置。",
+    "publisher": "Cloudflare",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/cloudflare/skills/tree/main/skills/workers-best-practices",
+    "repository": "cloudflare/skills",
+    "sourcePath": "skills/workers-best-practices",
+    "sourceHash": "01c452fd0b6b3caeb4c3b06f87893e52d8e95e32f691911c1644060e00dafa0e",
+    "sourceBlob": "d150906f403b130b68e7e47b958c4e46fbd053f3",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，第三方文件按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Cloudflare 测试项目；需要实际云操作时再核对账号、权限及 Wrangler 等依赖。"
+    ],
+    "example": "使用 Workers Best Practices 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游插件包含 Cloudflare MCP 配置；可能触发资源创建、更新或部署，先在测试资源中验证并检查费用。"
+    ],
+    "relatedServers": ["cloudflare-api"],
+    "installCommand": "/plugin marketplace add cloudflare/skills\n/plugin install cloudflare@cloudflare",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/cloudflare/skills",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "cloudflare-wrangler",
+    "name": "Wrangler",
+    "category": "云与部署",
+    "summary": "在已有 Wrangler 配置的项目中运行开发、预览和资源管理命令。",
+    "publisher": "Cloudflare",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/cloudflare/skills/tree/main/skills/wrangler",
+    "repository": "cloudflare/skills",
+    "sourcePath": "skills/wrangler",
+    "sourceHash": "a39de5c69f50e88759736a6ec7ad07f402c15f7a58a3224bcf979dce42013b13",
+    "sourceBlob": "d5cef1c15fd2434202c33f071cf502b5d69b141d",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，第三方文件按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Cloudflare 测试项目；需要实际云操作时再核对账号、权限及 Wrangler 等依赖。"
+    ],
+    "example": "使用 Wrangler 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游插件包含 Cloudflare MCP 配置；可能触发资源创建、更新或部署，先在测试资源中验证并检查费用。"
+    ],
+    "relatedServers": ["cloudflare-api"],
+    "installCommand": "/plugin marketplace add cloudflare/skills\n/plugin install cloudflare@cloudflare",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/cloudflare/skills",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "cloudflare-web-perf",
+    "name": "Web Performance",
+    "category": "开发与测试",
+    "summary": "分析网站加载、交互性能和 Core Web Vitals，并形成改进方向。",
+    "publisher": "Cloudflare",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/cloudflare/skills/tree/main/skills/web-perf",
+    "repository": "cloudflare/skills",
+    "sourcePath": "skills/web-perf",
+    "sourceHash": "0160c9e7f1b73eb80347efd899a6082219d43bb9de30424667c8017628a48469",
+    "sourceBlob": "9c70b7079aef1fbac9af3669bd38d5dfb712f4b7",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，第三方文件按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，允许加载插件。",
+      "准备获准测试的网站，按上游技能说明准备浏览器性能工具；性能分析本身不要求网站部署在 Cloudflare。"
+    ],
+    "example": "使用 Web Performance 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游插件包含 Cloudflare MCP 配置；可能触发资源创建、更新或部署，先在测试资源中验证并检查费用。"
+    ],
+    "relatedServers": ["chrome-devtools", "playwright"],
+    "installCommand": "/plugin marketplace add cloudflare/skills\n/plugin install cloudflare@cloudflare",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/cloudflare/skills",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "cloudflare-cloudflare",
+    "name": "Cloudflare Platform",
+    "category": "云与部署",
+    "summary": "根据应用需求查找 Cloudflare 产品及对应技能和文档。",
+    "publisher": "Cloudflare",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/cloudflare/skills/tree/main/skills/cloudflare",
+    "repository": "cloudflare/skills",
+    "sourcePath": "skills/cloudflare",
+    "sourceHash": "4ae6ab64ba0c08d3f469bd33ed7ea18166288fcc03f34d114dc2394b534bd153",
+    "sourceBlob": "695d8d6db7553e5fc151393ea891e00e44fd9477",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，第三方文件按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Cloudflare 测试项目；需要实际云操作时再核对账号、权限及 Wrangler 等依赖。"
+    ],
+    "example": "使用 Cloudflare Platform 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "上游插件包含 Cloudflare MCP 配置；可能触发资源创建、更新或部署，先在测试资源中验证并检查费用。"
+    ],
+    "relatedServers": ["cloudflare-api"],
+    "installCommand": "/plugin marketplace add cloudflare/skills\n/plugin install cloudflare@cloudflare",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/cloudflare/skills",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "stripe-stripe-best-practices",
+    "name": "Stripe Best Practices",
+    "category": "服务集成",
+    "summary": "整理 Stripe 集成中的 API 选择、测试环境和权限等开发决策。",
+    "publisher": "Stripe",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/stripe/ai/tree/main/providers/claude/plugin/skills/stripe-best-practices",
+    "repository": "stripe/ai",
+    "sourcePath": "providers/claude/plugin/skills/stripe-best-practices",
+    "sourceHash": "53bd670efa3d4c14f4e44d72e2bd183eb1acd49f93a10059f1be4ff794b90cd4",
+    "sourceBlob": "67412ead65464b49bd789a37869507877c99acd0",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Stripe 测试环境和对应集成代码，避免用生产凭证验证安装。"
+    ],
+    "example": "使用 Stripe Best Practices 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "官方插件含相关工具；支付与账号操作须单独审阅，本站未执行交易、部署或连接测试。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install stripe@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/stripe/ai",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "stripe-upgrade-stripe",
+    "name": "Upgrade Stripe",
+    "category": "服务集成",
+    "summary": "规划 Stripe API、Webhook 和 SDK 的版本升级。",
+    "publisher": "Stripe",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/stripe/ai/tree/main/providers/claude/plugin/skills/upgrade-stripe",
+    "repository": "stripe/ai",
+    "sourcePath": "providers/claude/plugin/skills/upgrade-stripe",
+    "sourceHash": "8fa86025fb3290556eda3a0e9bc74da521f8510f3567b6e2694d62ef3650c10e",
+    "sourceBlob": "c95286eb364c094c3852e87a0fedf9002213c865",
+    "license": "MIT（上游声明；具体文件与第三方依赖仍按各自许可）",
+    "prerequisites": [
+      "已安装并登录 Claude Code，确认组织允许插件和相关工具。",
+      "准备 Stripe 测试环境和对应集成代码，避免用生产凭证验证安装。"
+    ],
+    "example": "使用 Upgrade Stripe 检查我的测试项目，先说明适用范围与改动计划，不执行生产部署或交易。",
+    "permissions": [
+      "使用时可能读取和修改项目文件、运行相关开发工具；以客户端实际授权为准。",
+      "官方插件含相关工具；支付与账号操作须单独审阅，本站未执行交易、部署或连接测试。"
+    ],
+    "relatedServers": [],
+    "installCommand": "claude plugin install stripe@claude-plugins-official",
+    "installContext": "终端 Shell 命令",
+    "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
+    "installSource": "https://github.com/stripe/ai",
+    "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
   }
 ]
