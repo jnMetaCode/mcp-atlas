@@ -2,7 +2,7 @@
 
 跨公司、跨开发者的中文 MCP 导航。当前功能预览包含 32 个真实项目、8 个场景分类、32 篇文档核对配置指南。
 
-**[在线体验 Beta](https://mcp-atlas-yx.vasthen67.chatgpt.site) · [Skills 技能目录](https://mcp-atlas-yx.vasthen67.chatgpt.site/skills/) · [反馈问题](https://github.com/jnMetaCode/mcp-atlas/issues/new/choose)**
+**[在线体验 Beta](https://jnmetacode.github.io/mcp-atlas) · [Skills 技能目录](https://jnmetacode.github.io/mcp-atlas/skills/) · [反馈问题](https://github.com/jnMetaCode/mcp-atlas/issues/new/choose)**
 
 另有 26 项 Agent Skills，按任务与维护者检索，提供来源及中文安装说明。MCP 与 Skills 分开收录，便于判断连接条件与使用方法。
 
@@ -42,7 +42,7 @@ npm run build
 npm run test:e2e
 ```
 
-构建输出在 `out/`，可部署到支持目录索引的静态托管平台。
+构建输出在 `out/`，可部署到支持目录索引的静态托管平台。GitHub Pages 已配置：推送 `main` 后，在 Actions → Deploy GitHub Pages 查看检查及部署结果。公开访客直接打开在线地址，无需本机运行服务。详见 [部署指南](docs/静态部署指南.md)。
 
 ## 已实现
 
@@ -58,7 +58,7 @@ Figma、Slack、Atlassian 均已关联官方和社区实现，可从服务索引
 - 公开仓库为 https://github.com/jnMetaCode/mcp-atlas；申请可在 GitHub 确认提交，网站不自动发送。
 - Registry 候选导入、差异报告、来源链接检查及可选草稿 PR 流程已提供，尚未完成真实外网与远程工作流验证。
 - 浏览器测试需有运行浏览器及绑定本地端口的权限；受限环境可能无法启动。提供测试不代表已执行通过。
-- 测试版已部署至 https://mcp-atlas-yx.vasthen67.chatgpt.site ，现已公开开放 Beta 测试，无需本机启动。
+- 测试版已迁移至 https://jnmetacode.github.io/mcp-atlas/ ，由 GitHub Pages 自动部署；原 Sites 地址保留作为备用。
 
 ## 内容维护
 
