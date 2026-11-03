@@ -24,5 +24,17 @@
     "repository": "stripe/ai",
     "ref": "main",
     "skillRoot": "providers/claude/plugin/skills"
+  },
+  {
+    "repository": "supabase/agent-skills",
+    "ref": "main"
+  },
+  {
+    "repository": "neondatabase/agent-skills",
+    "ref": "main"
+  },
+  {
+    "repository": "redis/agent-skills",
+    "ref": "main"
   }
 ]

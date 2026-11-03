@@ -88,6 +88,13 @@ export default async function Page({
         <p>许可：{s.license}</p>
         <SourceLink href={s.source}>查看该 Skill 的源文件</SourceLink>
         <SourceLink href={s.installSource}>核对上游安装说明</SourceLink>
+        {"documentationUrl" in s &&
+          typeof s.documentationUrl === "string" &&
+          s.documentationUrl !== s.installSource && (
+            <SourceLink href={s.documentationUrl}>
+              官方文档（补充参考）
+            </SourceLink>
+          )}
       </section>
       {s.relatedServers.length > 0 && (
         <section>

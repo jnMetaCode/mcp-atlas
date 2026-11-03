@@ -17,6 +17,8 @@ export function validateSkills(skills, catalog) {
     ids.add(s.id);
     if (!publicHttpsUrl(s.source) || !publicHttpsUrl(s.installSource))
       errors.push(s.id + ": invalid source URL");
+    if (s.documentationUrl !== undefined && !publicHttpsUrl(s.documentationUrl))
+      errors.push(s.id + ": invalid documentation URL");
     if (sources.has(s.source)) errors.push(s.id + ": duplicate source");
     sources.add(s.source);
     const identity = `${String(s.repository).toLowerCase()}/${s.sourcePath}`;

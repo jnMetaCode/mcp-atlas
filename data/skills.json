@@ -1198,5 +1198,319 @@
     "installScope": "安装官方插件集合，可能同时启用其他技能及工具；不是仅安装当前一项。",
     "installSource": "https://github.com/stripe/ai",
     "removal": "在 Claude Code 插件管理中禁用或卸载对应插件；检查其中的 MCP 连接是否停止，必要时在提供方撤销授权。已生成文件、已部署资源和账号操作不会自动回滚。"
+  },
+  {
+    "id": "supabase-supabase-postgres-best-practices",
+    "name": "Supabase Postgres Best Practices",
+    "category": "数据与数据库",
+    "summary": "整理 PostgreSQL 查询、索引、表结构、迁移和行级权限相关实践。",
+    "publisher": "Supabase",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/supabase/agent-skills/tree/main/skills/supabase-postgres-best-practices",
+    "repository": "supabase/agent-skills",
+    "sourcePath": "skills/supabase-postgres-best-practices",
+    "sourceHash": "ad65e776f45e761bafc609d3f506c77c1032225aa65e0c4c02f241b8071e5855",
+    "sourceBlob": "6400792389dfcc82c81953054e546bd72ebcd259",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Supabase Postgres Best Practices 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["supabase"],
+    "installCommand": "npx skills add supabase/agent-skills --skill supabase-postgres-best-practices",
+    "installContext": "终端 Shell 命令",
+    "installScope": "按名称选择当前技能；安装器可能继续询问目标客户端和安装范围。",
+    "installSource": "https://github.com/supabase/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://supabase.com/docs/guides/ai-tools/ai-skills"
+  },
+  {
+    "id": "supabase-supabase",
+    "name": "Supabase Development",
+    "category": "数据与数据库",
+    "summary": "辅助 Supabase 数据库、认证、存储和前后端集成的开发与排错。",
+    "publisher": "Supabase",
+    "client": "支持 Agent Skills 的客户端（以安装器为准）",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/supabase/agent-skills/tree/main/skills/supabase",
+    "repository": "supabase/agent-skills",
+    "sourcePath": "skills/supabase",
+    "sourceHash": "697e0e949f97621c6fc1784169eb3ccbf673747d6bb8299a52962d3d84d93dc6",
+    "sourceBlob": "66093e0a0f8d9268094c1a4b38c04419b787ca89",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Supabase Development 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["supabase"],
+    "installCommand": "npx skills add supabase/agent-skills --skill supabase",
+    "installContext": "终端 Shell 命令",
+    "installScope": "按名称选择当前技能；安装器可能继续询问目标客户端和安装范围。",
+    "installSource": "https://github.com/supabase/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://supabase.com/docs/guides/ai-tools/ai-skills"
+  },
+  {
+    "id": "neon-neon-postgres",
+    "name": "Neon Postgres",
+    "category": "数据与数据库",
+    "summary": "处理 Neon Postgres 连接、分支、迁移及数据库查询等开发工作。",
+    "publisher": "Neon",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres",
+    "repository": "neondatabase/agent-skills",
+    "sourcePath": "skills/neon-postgres",
+    "sourceHash": "c4902bbbcbad6b143d69c76dbbd1d74191b257a248860c9b093f2bfc6f133b54",
+    "sourceBlob": "e738f60a1f981ef431602789fc375d9e30d8a24c",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，相关服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Neon Postgres 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。",
+      "所示 Neon 插件还会配置 MCP 服务；安装技能与授权数据库连接是两步。"
+    ],
+    "relatedServers": ["neon"],
+    "installCommand": "/plugin marketplace add neondatabase/agent-skills\n/plugin install neon-postgres@neon",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装，包含多项技能和 Neon MCP；使用 MCP 时需要单独完成 OAuth。",
+    "installSource": "https://github.com/neondatabase/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/neondatabase/agent-skills"
+  },
+  {
+    "id": "neon-neon-auth",
+    "name": "Neon Auth",
+    "category": "数据与数据库",
+    "summary": "为 Neon 应用规划登录、用户及会话集成，并区分已有身份系统。",
+    "publisher": "Neon",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon-auth",
+    "repository": "neondatabase/agent-skills",
+    "sourcePath": "skills/neon-auth",
+    "sourceHash": "e5239688cf696e976f0d372728cccfadd1fa221a5236160f87612c6eae2ff8e3",
+    "sourceBlob": "5ee70c7c92716e08fdff8fd409be42e28dd3b444",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，相关服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Neon Auth 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。",
+      "所示 Neon 插件还会配置 MCP 服务；安装技能与授权数据库连接是两步。"
+    ],
+    "relatedServers": ["neon"],
+    "installCommand": "/plugin marketplace add neondatabase/agent-skills\n/plugin install neon-postgres@neon",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装，包含多项技能和 Neon MCP；使用 MCP 时需要单独完成 OAuth。",
+    "installSource": "https://github.com/neondatabase/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/neondatabase/agent-skills"
+  },
+  {
+    "id": "neon-neon",
+    "name": "Neon Platform",
+    "category": "数据与数据库",
+    "summary": "根据应用需求选择 Neon 数据库、认证和后端能力，找到对应说明。",
+    "publisher": "Neon",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/neondatabase/agent-skills/tree/main/skills/neon",
+    "repository": "neondatabase/agent-skills",
+    "sourcePath": "skills/neon",
+    "sourceHash": "0cd8515b23c9b5ce24d29d51ecd17c06b1189794ca52422471804618aea01946",
+    "sourceBlob": "5f796c80d026f765eddcac1f5c053f2759d9b535",
+    "license": "Apache-2.0（已核对上游仓库 LICENSE，相关服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Neon Platform 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。",
+      "所示 Neon 插件还会配置 MCP 服务；安装技能与授权数据库连接是两步。"
+    ],
+    "relatedServers": ["neon"],
+    "installCommand": "/plugin marketplace add neondatabase/agent-skills\n/plugin install neon-postgres@neon",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "集合安装，包含多项技能和 Neon MCP；使用 MCP 时需要单独完成 OAuth。",
+    "installSource": "https://github.com/neondatabase/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/neondatabase/agent-skills"
+  },
+  {
+    "id": "redis-redis-core",
+    "name": "Redis Core",
+    "category": "数据与数据库",
+    "summary": "为缓存、计数器、排行和会话选择 Redis 数据结构与键命名。",
+    "publisher": "Redis",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/redis/agent-skills/tree/main/skills/redis-core",
+    "repository": "redis/agent-skills",
+    "sourcePath": "skills/redis-core",
+    "sourceHash": "7ab1000e7a1548c4f82179ea1d5a57ced43851e6a924ac647cecd822015b81a7",
+    "sourceBlob": "a62be86377ad672f5f9f2301a492cc4ee726d3cc",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Redis Core 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["redis"],
+    "installCommand": "/plugin install redis-development@claude-plugins-official",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装 Redis Development 插件集合，并非只安装当前技能。",
+    "installSource": "https://github.com/redis/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/redis/agent-skills"
+  },
+  {
+    "id": "redis-redis-connections",
+    "name": "Redis Connections",
+    "category": "数据与数据库",
+    "summary": "检查 Redis 客户端连接、连接池、批量请求、缓存和超时配置。",
+    "publisher": "Redis",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/redis/agent-skills/tree/main/skills/redis-connections",
+    "repository": "redis/agent-skills",
+    "sourcePath": "skills/redis-connections",
+    "sourceHash": "ee6caf1b8c97884599d7e95a66b970b0417a7c18274cb627ef05077acaa1a7f5",
+    "sourceBlob": "53f367a9a4ed6a4bf9c3c29a441dcfa1ee91a114",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Redis Connections 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["redis"],
+    "installCommand": "/plugin install redis-development@claude-plugins-official",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装 Redis Development 插件集合，并非只安装当前技能。",
+    "installSource": "https://github.com/redis/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/redis/agent-skills"
+  },
+  {
+    "id": "redis-redis-search",
+    "name": "Redis Search",
+    "category": "数据与数据库",
+    "summary": "整理 Redis 检索索引、向量相似搜索、聚合及混合检索的实现方法。",
+    "publisher": "Redis",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/redis/agent-skills/tree/main/skills/redis-search",
+    "repository": "redis/agent-skills",
+    "sourcePath": "skills/redis-search",
+    "sourceHash": "1df77121b528f0f91194af6c8466cef8288b78c8300be9cbe0e08ffd33d03494",
+    "sourceBlob": "2745c7d45aa49e280d69855837095aecaf5406ae",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Redis Search 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["redis"],
+    "installCommand": "/plugin install redis-development@claude-plugins-official",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装 Redis Development 插件集合，并非只安装当前技能。",
+    "installSource": "https://github.com/redis/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/redis/agent-skills"
+  },
+  {
+    "id": "redis-redis-security",
+    "name": "Redis Security",
+    "category": "数据与数据库",
+    "summary": "检查 Redis 认证、TLS、ACL 和网络暴露范围；不等于独立安全审计。",
+    "publisher": "Redis",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/redis/agent-skills/tree/main/skills/redis-security",
+    "repository": "redis/agent-skills",
+    "sourcePath": "skills/redis-security",
+    "sourceHash": "a8870d933bb099c022078d242d8083a8506c39299cb6f2b8f60e5a25f5d6d92d",
+    "sourceBlob": "661ba11f06c9a31203dfe6b828bd2c714d0a258e",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。"
+    ],
+    "example": "使用 Redis Security 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["redis"],
+    "installCommand": "/plugin install redis-development@claude-plugins-official",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装 Redis Development 插件集合，并非只安装当前技能。",
+    "installSource": "https://github.com/redis/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/redis/agent-skills"
+  },
+  {
+    "id": "redis-redis-semantic-cache",
+    "name": "Redis Semantic Cache",
+    "category": "数据与数据库",
+    "summary": "围绕 Redis LangCache 组织模型响应缓存、相似阈值和任务隔离。",
+    "publisher": "Redis",
+    "client": "Claude Code",
+    "reviewedAt": "2026-11-03",
+    "source": "https://github.com/redis/agent-skills/tree/main/skills/redis-semantic-cache",
+    "repository": "redis/agent-skills",
+    "sourcePath": "skills/redis-semantic-cache",
+    "sourceHash": "139a4520d5954d5c0fcf3a9de53be5dea5afbc87fb3f651bf0c41e4740560745",
+    "sourceBlob": "2fa6acc93709e885ba4edebd9f954344e5a729b2",
+    "license": "MIT（已核对上游许可；相关数据库与服务依各自条款）",
+    "prerequisites": [
+      "准备适用客户端和测试项目，确认允许加载外部技能。",
+      "仅在需要实际数据库操作时准备最小权限测试账号；本站不收集连接串或密钥。",
+      "该技能面向 Redis Cloud LangCache，不是所有本地 Redis 实例自带的功能，使用前检查服务条件。"
+    ],
+    "example": "使用 Redis Semantic Cache 检查我的测试项目，先解释适用条件和修改计划，不连接生产数据库或执行数据删除。",
+    "permissions": [
+      "可能读取或修改应用代码和数据库配置；实际执行范围以客户端授权为准。",
+      "需要数据库连接、迁移或云资源操作时，先使用测试环境并检查 SQL、备份及账号权限。技能许可不代表托管数据库服务免费。"
+    ],
+    "relatedServers": ["redis"],
+    "installCommand": "/plugin install redis-development@claude-plugins-official",
+    "installContext": "Claude Code 会话中的斜杠命令",
+    "installScope": "安装 Redis Development 插件集合，并非只安装当前技能。",
+    "installSource": "https://github.com/redis/agent-skills#installation",
+    "removal": "从相应客户端或安装工具中移除技能或插件集合；如曾授权数据库 MCP，在提供方撤销不再使用的授权。已执行的数据库迁移和资源操作不会自动撤销。",
+    "documentationUrl": "https://github.com/redis/agent-skills"
   }
 ]
