@@ -1,3 +1,5 @@
+import { withBasePath } from "../lib/base-path.mjs";
+import AppLink from "../components/app-link";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -32,10 +34,10 @@ export default function Home() {
       <section className="hero">
         <div className="hero-grid" />
         <div className="hero-main">
-          <a className="hero-pill" href="/about/">
+          <AppLink className="hero-pill" href="/about/">
             <span /> 一个开放、持续生长的 MCP 工具地图{" "}
             <ArrowUpRight size={14} />
-          </a>
+          </AppLink>
           <h1>
             好工具，
             <br />让 AI <span>多一种可能。</span>
@@ -48,7 +50,7 @@ export default function Home() {
             <br />
             跟着中文配置指南，找到下一步怎么用。
           </p>
-          <form action="/servers/" className="hero-search">
+          <form action={withBasePath("/servers/")} className="hero-search">
             <Search size={22} />
             <input
               name="q"
@@ -62,10 +64,10 @@ export default function Home() {
           <div className="hot-search">
             <span>试试搜索</span>
             {["GitHub", "浏览器", "文档", "数据库"].map((t) => (
-              <a key={t} href={"/servers/?q=" + encodeURIComponent(t)}>
+              <AppLink key={t} href={"/servers/?q=" + encodeURIComponent(t)}>
                 {t}
                 <ArrowUpRight size={12} />
-              </a>
+              </AppLink>
             ))}
           </div>
         </div>
@@ -121,15 +123,15 @@ export default function Home() {
             <h2>从你想做的事开始</h2>
             <p>不用先记住工具名，找到你的使用场景。</p>
           </div>
-          <a className="text-link" href="/categories/">
+          <AppLink className="text-link" href="/categories/">
             所有分类 <ArrowRight size={16} />
-          </a>
+          </AppLink>
         </div>
         <div className="category-grid">
           {catalog.categories.map((c, i) => {
             const Icon = icons[i];
             return (
-              <a
+              <AppLink
                 className="category-card"
                 href={"/categories/" + c.id + "/"}
                 key={c.id}
@@ -145,7 +147,7 @@ export default function Home() {
                   </span>
                 </div>
                 <ArrowUpRight size={16} />
-              </a>
+              </AppLink>
             );
           })}
         </div>
@@ -159,9 +161,9 @@ export default function Home() {
             </h2>
             <p>先了解它能做什么，再决定是否适合你的工作流。</p>
           </div>
-          <a className="text-link" href="/servers/">
+          <AppLink className="text-link" href="/servers/">
             浏览全部 {catalog.servers.length} 个项目 <ArrowRight size={16} />
-          </a>
+          </AppLink>
         </div>
         <div className="project-grid">
           {catalog.servers
@@ -185,9 +187,9 @@ export default function Home() {
               也可能是别人的下一步。
             </h2>
             <p>分享一个项目，修正一条信息，或者贡献一份上手经验。</p>
-            <a href="/submit/" className="button">
+            <AppLink href="/submit/" className="button">
               参与目录共建 <ArrowUpRight size={16} />
-            </a>
+            </AppLink>
           </div>
           <span className="banner-number">↗</span>
         </div>
@@ -200,9 +202,9 @@ export default function Home() {
         <p>
           当前为精选目录预览版。项目均附上游来源；费用和兼容性未确认时会明确标记。本站收录不代表已完成连接测试。
         </p>
-        <a href="/about/" className="text-link">
+        <AppLink href="/about/" className="text-link">
           了解收录方式 <ArrowRight size={16} />
-        </a>
+        </AppLink>
       </section>
     </>
   );

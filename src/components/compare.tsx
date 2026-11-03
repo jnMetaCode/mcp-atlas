@@ -1,4 +1,6 @@
 "use client";
+import AppLink from "./app-link";
+
 import { useEffect, useState } from "react";
 import catalog from "../lib/data";
 import { labels, normalizeCompare } from "../lib/catalog.mjs";
@@ -71,7 +73,7 @@ export default function Compare() {
               {items.map((s) => (
                 <th scope="col" key={s.id}>
                   <IconMark server={s} />
-                  <a href={"/servers/" + s.slug + "/"}>{s.name}</a>
+                  <AppLink href={"/servers/" + s.slug + "/"}>{s.name}</AppLink>
                   <button
                     onClick={() => {
                       const next = items.filter((x) => x.id !== s.id);
@@ -116,17 +118,17 @@ export default function Compare() {
         运行、传输和认证按同名接入变体逐项对应，不同变体的条件不能混用。本表对比公开资料，不代表连接测试或安全认证。未知项目
         ID 会被忽略，最多展示三个实现。
       </p>
-      <a className="text-link" href="/servers/">
+      <AppLink className="text-link" href="/servers/">
         ← 继续选择项目
-      </a>
+      </AppLink>
     </>
   ) : (
     <div className="empty-state">
       <h2>先挑选想了解的项目</h2>
       <p>在目录中勾选最多 3 个项目，即可逐项比较。</p>
-      <a className="button" href="/servers/">
+      <AppLink className="button" href="/servers/">
         去目录选择 →
-      </a>
+      </AppLink>
     </div>
   );
 }

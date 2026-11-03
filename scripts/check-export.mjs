@@ -2,6 +2,8 @@ import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { checkExportMetadata } from "./lib/export-metadata.mjs";
 const root = resolve("out");
+const build = JSON.parse(readFileSync(join(root, "build-info.json"), "utf8"));
+const prefix = build.basePath || "";
 function walk(directory) {
   return readdirSync(directory).flatMap((name) => {
     const path = join(directory, name);
@@ -17,9 +19,16 @@ for (const file of html) {
     for (const attribute of tag[0].matchAll(/(?:href|src)="([^"#]+)"/g)) {
       const link = attribute[1].replaceAll("&amp;", "&");
       if (!link.startsWith("/") || link.startsWith("//")) continue;
-      const pathname = decodeURIComponent(
+      let pathname = decodeURIComponent(
         new URL(link, "https://example.test").pathname,
       );
+      if (prefix) {
+        if (pathname !== prefix && !pathname.startsWith(prefix + "/")) {
+          errors.push(`${file}: link escapes base path ${link}`);
+          continue;
+        }
+        pathname = pathname.slice(prefix.length) || "/";
+      }
       const target = resolve(root, "." + pathname);
       if (!target.startsWith(root + "/") && target !== root) {
         errors.push(`${file}: invalid target ${link}`);
@@ -49,11 +58,11 @@ for (const guide of guides)
   if (!existsSync(join(root, "guides", guide.id, "index.html")))
     errors.push(`missing guide ${guide.id}`);
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
-const build = JSON.parse(readFileSync(join(root, "build-info.json"), "utf8"));
 if (build.snapshot !== catalog.snapshot) errors.push("build snapshot mismatch");
 errors.push(
   ...checkExportMetadata({
     origin: build.origin,
+    basePath: prefix,
     sitemap,
     robots: readFileSync(join(root, "robots.txt"), "utf8"),
     showcase: readFileSync(join(root, "showcase/index.html"), "utf8"),

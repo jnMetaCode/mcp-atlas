@@ -1,3 +1,4 @@
+import AppLink from "../../../components/app-link";
 import { notFound } from "next/navigation";
 import guides from "../../../../data/guides.json";
 import catalog from "../../../lib/data";
@@ -32,9 +33,9 @@ export default async function Page({
   )!;
   return (
     <div className="page-container narrow">
-      <a className="breadcrumb" href="/guides/">
+      <AppLink className="breadcrumb" href="/guides/">
         上手指南 / {guide.title}
-      </a>
+      </AppLink>
       <PageIntro
         eyebrow="CONFIGURE WITH CONTEXT"
         title={guide.title}
@@ -43,9 +44,9 @@ export default async function Page({
       <section className="content-panel">
         <GuideContent guide={guide} />
       </section>
-      <a className="text-link" href={"/servers/" + server.slug + "/"}>
+      <AppLink className="text-link" href={"/servers/" + server.slug + "/"}>
         ← 查看 {server.name} 项目详情
-      </a>
+      </AppLink>
     </div>
   );
 }

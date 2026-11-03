@@ -1,4 +1,6 @@
 "use client";
+import AppLink from "./app-link";
+
 import { useState } from "react";
 import guides from "../../data/guides.json";
 import catalog from "../lib/data";
@@ -55,7 +57,11 @@ export default function GuideBrowser() {
       </p>
       <div className="guide-links">
         {visible.map((g) => (
-          <a className="guide-link" key={g.id} href={"/guides/" + g.id + "/"}>
+          <AppLink
+            className="guide-link"
+            key={g.id}
+            href={"/guides/" + g.id + "/"}
+          >
             <span>
               {g.title}
               <small>
@@ -67,7 +73,7 @@ export default function GuideBrowser() {
               </small>
             </span>
             <span aria-hidden="true">↗</span>
-          </a>
+          </AppLink>
         ))}
       </div>
       {!visible.length && (
@@ -85,9 +91,9 @@ export default function GuideBrowser() {
           >
             清空指南筛选
           </button>
-          <a className="text-link" href="/submit/">
+          <AppLink className="text-link" href="/submit/">
             申请补充指南 →
-          </a>
+          </AppLink>
         </div>
       )}
     </>

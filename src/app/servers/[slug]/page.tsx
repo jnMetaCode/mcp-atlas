@@ -1,3 +1,4 @@
+import AppLink from "../../../components/app-link";
 import catalog from "../../../lib/data";
 import guides from "../../../../data/guides.json";
 import { notFound } from "next/navigation";
@@ -53,9 +54,9 @@ export default async function Detail({
     .join(" / ");
   return (
     <div className="page-container">
-      <a className="breadcrumb" href="/servers/">
+      <AppLink className="breadcrumb" href="/servers/">
         发现 MCP / {server.name}
-      </a>
+      </AppLink>
       <div className="detail-header">
         <IconMark server={server} />
         <div>
@@ -168,7 +169,7 @@ export default async function Detail({
                 </p>
                 <div className="guide-links">
                   {availableGuides.map((guide) => (
-                    <a
+                    <AppLink
                       className="guide-link"
                       href={"/guides/" + guide.id + "/"}
                       key={guide.id}
@@ -178,7 +179,7 @@ export default async function Detail({
                         <small>{guide.clientVersionRange}</small>
                       </span>
                       <ArrowUpRight size={17} />
-                    </a>
+                    </AppLink>
                   ))}
                 </div>
                 {availableGuides.map((guide) => (
@@ -236,13 +237,13 @@ export default async function Detail({
               <br />
               最近连接测试：尚未进行
             </p>
-            <a
+            <AppLink
               href={"/submit/?project=" + server.id + "&type=correction"}
               className="text-link"
             >
               报告错误或补充指南
               <ArrowUpRight size={15} />
-            </a>
+            </AppLink>
           </section>
         </div>
         <aside className="detail-aside">
@@ -280,7 +281,7 @@ export default async function Detail({
             </div>
           ))}
           <p>源码开放不代表底层 API 或服务免费。费用请以提供方说明为准。</p>
-          <a
+          <AppLink
             className="button full"
             href={
               "/compare/?ids=" +
@@ -291,7 +292,7 @@ export default async function Detail({
           >
             查看对比
             <ArrowUpRight size={15} />
-          </a>
+          </AppLink>
         </aside>
       </div>
       {related.length > 0 && (

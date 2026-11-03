@@ -1,4 +1,6 @@
 "use client";
+import AppLink from "./app-link";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Search,
@@ -312,7 +314,7 @@ export default function CatalogBrowser({
             <button className="button" onClick={() => update(defaults())}>
               清空筛选
             </button>
-            <a href="/submit/">提交未收录的项目 →</a>
+            <AppLink href="/submit/">提交未收录的项目 →</AppLink>
           </div>
         )}
         {page.pages > 1 && (
@@ -366,10 +368,13 @@ export default function CatalogBrowser({
               </button>
             ))}
           </div>
-          <a className="button" href={"/compare/?ids=" + compared.join(",")}>
+          <AppLink
+            className="button"
+            href={"/compare/?ids=" + compared.join(",")}
+          >
             开始对比
             <ArrowRight size={15} />
-          </a>
+          </AppLink>
         </div>
       )}
       <div role="status" className={message ? "toast" : ""}>

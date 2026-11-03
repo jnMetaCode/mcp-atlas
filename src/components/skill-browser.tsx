@@ -1,4 +1,6 @@
 "use client";
+import AppLink from "./app-link";
+
 import { useState, useEffect } from "react";
 import skills from "../../data/skills.json";
 export default function SkillBrowser() {
@@ -92,14 +94,18 @@ export default function SkillBrowser() {
       <p role="status">找到 {visible.length} 项技能</p>
       <div className="index-grid">
         {visible.map((s) => (
-          <a className="index-card" href={"/skills/" + s.id + "/"} key={s.id}>
+          <AppLink
+            className="index-card"
+            href={"/skills/" + s.id + "/"}
+            key={s.id}
+          >
             <span className="badge">{s.category}</span>
             <h2>{s.name} ↗</h2>
             <p>{s.summary}</p>
             <p>{s.publisher} · GitHub 源码</p>
             <small>{s.license}</small>
             <p>查看中文安装与使用步骤 →</p>
-          </a>
+          </AppLink>
         ))}
       </div>
       {!visible.length && (

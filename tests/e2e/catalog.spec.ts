@@ -1,6 +1,12 @@
 import { test, expect, type Page } from "@playwright/test";
 import catalog from "../../data/catalog.json";
 import guides from "../../data/guides.json";
+import { withBasePath } from "../../src/lib/base-path.mjs";
+test.beforeEach(async ({ page }) => {
+  const goto = page.goto.bind(page);
+  page.goto = ((url, ...args) =>
+    goto(withBasePath(url), ...args)) as typeof page.goto;
+});
 const firstPageCount = Math.min(catalog.servers.length, 24);
 test("审核提示按访问日期更新，不依赖重新构建", async ({ page }) => {
   await page.clock.install({ time: new Date("2027-06-01T12:00:00Z") });

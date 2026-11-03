@@ -1,3 +1,4 @@
+import AppLink from "../../components/app-link";
 import catalog from "../../lib/data";
 import { PageIntro } from "../../components/ui";
 export const metadata = { title: "场景分类" };
@@ -11,7 +12,7 @@ export default function Categories() {
       />
       <div className="index-grid">
         {catalog.categories.map((c, i) => (
-          <a
+          <AppLink
             className="index-card"
             href={"/categories/" + c.id + "/"}
             key={c.id}
@@ -22,7 +23,7 @@ export default function Categories() {
             <span className="badge">
               {catalog.servers.filter((s) => s.category === c.id).length} 个项目
             </span>
-          </a>
+          </AppLink>
         ))}
       </div>
     </div>

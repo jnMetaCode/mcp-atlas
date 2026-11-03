@@ -3,6 +3,7 @@ import { validateCatalog } from "./catalog-validation.mjs";
 import { validateBindings } from "./lib/registry.mjs";
 import { resolveSiteOrigin } from "../src/lib/site-config.mjs";
 import { validateSkills } from "./skills-validation.mjs";
+import { basePath } from "../src/lib/base-path.mjs";
 const root = new URL("../", import.meta.url);
 const catalog = JSON.parse(readFileSync(new URL("data/catalog.json", root)));
 const guides = JSON.parse(readFileSync(new URL("data/guides.json", root)));
@@ -31,7 +32,7 @@ try {
 // Publish a clean snapshot only after the entire source dataset passes validation.
 writeFileSync(
   new URL("public/build-info.json", root),
-  JSON.stringify({ origin, snapshot: catalog.snapshot }),
+  JSON.stringify({ origin, basePath, snapshot: catalog.snapshot }),
 );
 const directory = new URL("public/data/v1/", root);
 rmSync(directory, { recursive: true, force: true });

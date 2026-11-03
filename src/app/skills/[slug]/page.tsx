@@ -1,3 +1,4 @@
+import AppLink from "../../../components/app-link";
 import skills from "../../../../data/skills.json";
 import catalog from "../../../lib/data";
 import { notFound } from "next/navigation";
@@ -27,9 +28,9 @@ export default async function Page({
   if (!s) notFound();
   return (
     <div className="page-container narrow">
-      <a href="/skills/" className="text-link">
+      <AppLink href="/skills/" className="text-link">
         ← Skills 技能目录
-      </a>
+      </AppLink>
       <PageIntro eyebrow="SKILL GUIDE" title={s.name} description={s.summary} />
       <section className="content-panel">
         <p>

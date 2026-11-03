@@ -1,3 +1,4 @@
+import AppLink from "../../components/app-link";
 import { Compass, ArrowRight } from "lucide-react";
 import { PageIntro } from "../../components/ui";
 export const metadata = {
@@ -21,9 +22,9 @@ export default function Page() {
           <br />
           补充后会展示实际功能、实现取舍与使用方式。
         </p>
-        <a href="/servers/" className="button">
+        <AppLink href="/servers/" className="button">
           先探索目录 <ArrowRight size={16} />
-        </a>
+        </AppLink>
       </div>
       <div className="notice">
         作者作品进入公共目录时，会标注“本站作者开发”，并采用相同的审核与排序规则。

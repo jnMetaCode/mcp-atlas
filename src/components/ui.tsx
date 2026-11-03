@@ -1,3 +1,4 @@
+import AppLink from "./app-link";
 import { ArrowUpRight, Compass, ArrowRight } from "lucide-react";
 import catalog from "../lib/data";
 import { labels } from "../lib/catalog.mjs";
@@ -5,7 +6,7 @@ export type Server = (typeof catalog.servers)[number];
 export function Header() {
   return (
     <header className="site-header">
-      <a className="brand" href="/">
+      <AppLink className="brand" href="/">
         <span className="brand-icon">
           <Compass size={24} />
         </span>
@@ -13,18 +14,18 @@ export function Header() {
           MCP<span className="brand-light">Atlas</span>
           <i>探索工具的更多可能</i>
         </span>
-      </a>
+      </AppLink>
       <nav aria-label="主导航">
-        <a href="/servers/">发现 MCP</a>
-        <a href="/categories/">场景分类</a>
-        <a href="/services/">服务索引</a>
-        <a href="/guides/">上手指南</a>
-        <a href="/skills/">Skills 技能</a>
-        <a href="/showcase/">作者作品</a>
+        <AppLink href="/servers/">发现 MCP</AppLink>
+        <AppLink href="/categories/">场景分类</AppLink>
+        <AppLink href="/services/">服务索引</AppLink>
+        <AppLink href="/guides/">上手指南</AppLink>
+        <AppLink href="/skills/">Skills 技能</AppLink>
+        <AppLink href="/showcase/">作者作品</AppLink>
       </nav>
-      <a className="button small header-cta" href="/submit/">
+      <AppLink className="button small header-cta" href="/submit/">
         提交项目 <ArrowUpRight size={15} />
-      </a>
+      </AppLink>
     </header>
   );
 }
@@ -32,14 +33,14 @@ export function Footer() {
   return (
     <footer>
       <div className="footer-top">
-        <a href="/" className="brand">
+        <AppLink href="/" className="brand">
           <Compass size={23} /> MCP Atlas
-        </a>
+        </AppLink>
         <p>连接好工具，让想法多走一步。</p>
         <div>
-          <a href="/about/">关于项目</a>
-          <a href="/submit/">参与共建</a>
-          <a href="/data/v1/catalog.json">目录数据 ↗</a>
+          <AppLink href="/about/">关于项目</AppLink>
+          <AppLink href="/submit/">参与共建</AppLink>
+          <AppLink href="/data/v1/catalog.json">目录数据 ↗</AppLink>
         </div>
       </div>
       <div className="footer-bottom">
@@ -72,10 +73,10 @@ export function Card({ server: s }: { server: Server }) {
           {labels.identity[s.identity as keyof typeof labels.identity]}
         </span>
       </div>
-      <a href={"/servers/" + s.slug + "/"} className="card-title">
+      <AppLink href={"/servers/" + s.slug + "/"} className="card-title">
         {s.name}
         <ArrowUpRight size={16} />
-      </a>
+      </AppLink>
       <p className="publisher">{s.publisher}</p>
       <p className="card-summary">{s.summaryZh}</p>
       <div className="tags">
@@ -89,9 +90,12 @@ export function Card({ server: s }: { server: Server }) {
           <i className={"dot " + (s.deployment === "unknown" ? "muted" : "")} />
           {labels.deployment[s.deployment as keyof typeof labels.deployment]}
         </span>
-        <a href={"/servers/" + s.slug + "/"} aria-label={"查看 " + s.name}>
+        <AppLink
+          href={"/servers/" + s.slug + "/"}
+          aria-label={"查看 " + s.name}
+        >
           <ArrowRight size={17} />
-        </a>
+        </AppLink>
       </div>
     </article>
   );
@@ -121,7 +125,7 @@ export function SourceLink({
   children: React.ReactNode;
 }) {
   return (
-    <a
+    <AppLink
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -129,6 +133,6 @@ export function SourceLink({
     >
       {children}
       <ArrowUpRight size={15} />
-    </a>
+    </AppLink>
   );
 }

@@ -1,3 +1,4 @@
+import AppLink from "../../components/app-link";
 import SkillBrowser from "../../components/skill-browser";
 import skills from "../../../data/skills.json";
 import { PageIntro } from "../../components/ui";
@@ -24,29 +25,29 @@ export default function Page() {
           以下网站用于继续发现候选；目录索引和上游技能是不同内容，本页没有复制第三方榜单或评分。
         </p>
         <p>
-          <a
+          <AppLink
             href="https://skills.sh/"
             target="_blank"
             rel="noopener noreferrer"
           >
             skills.sh 技能目录 ↗
-          </a>{" "}
+          </AppLink>{" "}
           ·{" "}
-          <a
+          <AppLink
             href="https://github.com/topics/agent-skills"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub Agent Skills 主题 ↗
-          </a>
+          </AppLink>
         </p>
         <p>
           欢迎通过提交项目入口推荐 GitHub
           仓库或其他公开网址。重复来源按仓库和目录路径核对；只有人工核对后才会进入正式目录。
         </p>
-        <a className="text-link" href="/submit/?type=skill">
+        <AppLink className="text-link" href="/submit/?type=skill">
           推荐一个技能来源 →
-        </a>
+        </AppLink>
       </section>
     </div>
   );

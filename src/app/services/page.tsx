@@ -1,3 +1,4 @@
+import AppLink from "../../components/app-link";
 import catalog from "../../lib/data";
 import { PageIntro } from "../../components/ui";
 export const metadata = { title: "服务索引" };
@@ -11,7 +12,11 @@ export default function Services() {
       />
       <div className="index-grid">
         {catalog.services.map((c) => (
-          <a className="index-card" href={"/services/" + c.id + "/"} key={c.id}>
+          <AppLink
+            className="index-card"
+            href={"/services/" + c.id + "/"}
+            key={c.id}
+          >
             <h2>{c.name} ↗</h2>
             <p>{c.description}</p>
             <span className="badge">
@@ -21,7 +26,7 @@ export default function Services() {
               }{" "}
               个实现
             </span>
-          </a>
+          </AppLink>
         ))}
       </div>
     </div>

@@ -1,3 +1,4 @@
+import AppLink from "../../../components/app-link";
 import catalog from "../../../lib/data";
 import { notFound } from "next/navigation";
 import { PageIntro } from "../../../components/ui";
@@ -15,9 +16,9 @@ export default async function Service({
   if (!s) notFound();
   return (
     <div className="page-container">
-      <a href="/services/" className="breadcrumb">
+      <AppLink href="/services/" className="breadcrumb">
         服务索引 / {s.name}
-      </a>
+      </AppLink>
       <PageIntro
         eyebrow="EXPLORE IMPLEMENTATIONS"
         title={s.name + " 的 MCP 实现"}

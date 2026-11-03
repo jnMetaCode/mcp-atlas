@@ -1,3 +1,4 @@
+import AppLink from "../components/app-link";
 import type { Metadata } from "next";
 import { Header, Footer } from "../components/ui";
 import "./globals.css";
@@ -15,9 +16,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
       <body>
-        <a href="#main" className="skip-link">
+        <AppLink href="#main" className="skip-link">
           跳到主要内容
-        </a>
+        </AppLink>
         <Header />
         <main id="main">{children}</main>
         <Footer />

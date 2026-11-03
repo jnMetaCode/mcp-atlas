@@ -1,5 +1,11 @@
 # 变更记录
 
+## 2026-11-03 · GitHub Pages 迁移
+
+- 内部链接及搜索表单统一适配部署前缀，Next.js 资源路径、sitemap、robots 与 canonical 按构建配置生成。
+- 新增 Pages 工作流：以 /mcp-atlas 构建，通过校验、组件与浏览器测试后上传并部署静态产物。
+- 根路径部署继续受支持；子路径环境下 30 项桌面/手机浏览器测试通过。
+
 ## 2026-11-03 · 公开仓库与贡献入口
 
 - 建立公开 GitHub 仓库 jnMetaCode/mcp-atlas，连接推荐/纠错的 GitHub Issue 草稿入口，由用户检查后提交。

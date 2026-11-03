@@ -1,3 +1,4 @@
+import AppLink from "../../../components/app-link";
 import catalog from "../../../lib/data";
 import { notFound } from "next/navigation";
 import { PageIntro } from "../../../components/ui";
@@ -15,9 +16,9 @@ export default async function Category({
   if (!c) notFound();
   return (
     <div className="page-container">
-      <a className="breadcrumb" href="/categories/">
+      <AppLink className="breadcrumb" href="/categories/">
         场景分类 / {c.name}
-      </a>
+      </AppLink>
       <PageIntro
         eyebrow="EXPLORE BY PURPOSE"
         title={c.name}
