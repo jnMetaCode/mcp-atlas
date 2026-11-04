@@ -9,6 +9,31 @@ test.beforeEach(async ({ page }) => {
     goto(withBasePath(url), ...args)) as typeof page.goto;
 });
 const firstPageCount = Math.min(catalog.servers.length, 24);
+test("Skills 分页可刷新分享、越界恢复，搜索返回第一页", async ({ page }) => {
+  await page.goto("/skills/");
+  await expect(page.locator(".index-card")).toHaveCount(12);
+  await page
+    .getByRole("navigation", { name: "Skills 分页" })
+    .getByRole("button", { name: "下一页" })
+    .click();
+  await expect(page).toHaveURL(/page=2/);
+  await expect(
+    page.getByRole("region", { name: "技能结果，第 2 页" }),
+  ).toBeFocused();
+  await page.reload();
+  await expect(page).toHaveURL(/page=2/);
+  await expect(page.locator(".index-card")).toHaveCount(12);
+  await page.getByRole("searchbox", { name: "搜索 Skills" }).fill("Supabase");
+  await expect(page).not.toHaveURL(/page=/);
+  await expect(page.locator(".index-card")).toHaveCount(2);
+  await page.goto("/skills/?page=999");
+  await expect(page).toHaveURL(
+    new RegExp("page=" + Math.ceil(skills.length / 12)),
+  );
+  await expect(page.locator(".index-card")).toHaveCount(
+    skills.length % 12 || 12,
+  );
+});
 test("审核提示按访问日期更新，不依赖重新构建", async ({ page }) => {
   await page.clock.install({ time: new Date("2027-06-01T12:00:00Z") });
   await page.goto("/servers/github/");
@@ -47,7 +72,9 @@ test("Skills 跨维护者筛选、中文检索及空结果恢复", async ({ page
     page.getByRole("heading", { name: "没有匹配的技能" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "清空技能筛选" }).click();
-  await expect(page.locator(".index-card")).toHaveCount(skills.length);
+  await expect(page.locator(".index-card")).toHaveCount(
+    Math.min(12, skills.length),
+  );
 });
 test("Skills 独立目录可以进入中文安装页，并说明集合与未实测范围", async ({
   page,
